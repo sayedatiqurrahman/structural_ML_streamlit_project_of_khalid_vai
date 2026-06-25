@@ -1,8 +1,12 @@
 var NAV_ITEMS = [
     {key:"parameters", icon:"tune", label:"Parameters"},
     {key:"dashboard", icon:"dashboard", label:"Dashboard"},
+    {key:"history", icon:"history", label:"Benchmarks"},
     {key:"about", icon:"info", label:"About"},
 ];
+
+var HISTORY_KEY = "structuraml_history";
+var HISTORY_MAX = 50;
 
 var RC = {"Very High": "#EF4444", "Moderate": "#F97316", "Low": "#22C55E", "Very Low": "#3B82F6"};
 var RC_TAILWIND = {"Very High": "text-red-600", "Moderate": "text-orange-500", "Low": "text-green-600", "Very Low": "text-blue-600"};
@@ -255,6 +259,128 @@ function renderDashboard() {
       '</div>';
 }
 
+/* === HISTORY === */
+
+function getHistory() {
+    try {
+        var raw = localStorage.getItem(HISTORY_KEY);
+        return raw ? JSON.parse(raw) : [];
+    } catch(e) { return []; }
+}
+
+function saveHistory(params, results, limits) {
+    var history = getHistory();
+    var entry = {
+        id: Date.now(),
+        timestamp: new Date().toLocaleString(),
+        params: JSON.parse(JSON.stringify(params)),
+        results: JSON.parse(JSON.stringify(results)),
+        limits: limits ? JSON.parse(JSON.stringify(limits)) : null,
+    };
+    history.unshift(entry);
+    if (history.length > HISTORY_MAX) history.length = HISTORY_MAX;
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(history)); } catch(e) {}
+}
+
+function deleteHistoryItem(id) {
+    var history = getHistory().filter(function(e) { return e.id !== id; });
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(history)); } catch(e) {}
+    renderHistory();
+}
+
+function clearHistory() {
+    try { localStorage.removeItem(HISTORY_KEY); } catch(e) {}
+    renderHistory();
+}
+
+function renderHistory() {
+    var content = document.getElementById('history-content');
+    if (!content) return;
+    var history = getHistory();
+    if (history.length === 0) {
+        content.innerHTML =
+          '<div class="flex flex-col items-center justify-center py-24 text-center">' +
+            '<span class="material-symbols-outlined text-5xl text-slate-300">history</span>' +
+            '<h2 class="text-xl font-bold text-slate-900 mt-4 mb-2">No Benchmarks Yet</h2>' +
+            '<p class="text-slate-500 text-sm">Run a prediction and it will appear here.</p>' +
+          '</div>';
+        return;
+    }
+    var html =
+      '<div class="flex items-center justify-between mb-4">' +
+        '<div>' +
+          '<h1 class="text-3xl font-black text-slate-900 tracking-tight">Benchmark History</h1>' +
+          '<p class="text-slate-500 mt-1">' + history.length + ' saved prediction' + (history.length !== 1 ? 's' : '') + '</p>' +
+        '</div>' +
+        '<button onclick="clearHistory()" class="flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-red-600 bg-red-50 border border-red-200 rounded-xl hover:bg-red-100 transition-colors cursor-pointer active:scale-95">' +
+          '<span class="material-symbols-outlined text-sm">delete_sweep</span> Clear All' +
+        '</button>' +
+      '</div>' +
+      '<div class="space-y-3">';
+
+    history.forEach(function(entry) {
+        var p = entry.params;
+        var r = entry.results;
+        var risks = (entry.limits && entry.limits.risks) ? entry.limits.risks : {};
+        var allPass = entry.limits && entry.limits.safety &&
+            entry.limits.safety.drift_pass && entry.limits.safety.sway_pass && entry.limits.safety.column_pass;
+
+        var statusIcon = allPass ? 'check_circle' : 'warning';
+        var statusColor = allPass ? 'text-green-600' : 'text-orange-500';
+
+        var riskLabels = '';
+        ['column','drift','sway','torsion'].forEach(function(k) {
+            var label = risks[k] ? risks[k].label : '--';
+            var cls = RC_BG[label] || "bg-slate-100 text-slate-600";
+            riskLabels += '<span class="text-[10px] font-bold px-1.5 py-0.5 rounded-full ' + cls + '">' + label + '</span> ';
+        });
+
+        html +=
+          '<div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow cursor-pointer active:scale-[0.99] overflow-hidden" onclick="restoreHistory(' + entry.id + ')">' +
+            '<div class="flex items-center justify-between px-5 py-3 bg-slate-50 border-b border-slate-100">' +
+              '<div class="flex items-center gap-2">' +
+                '<span class="material-symbols-outlined text-sm ' + statusColor + '">' + statusIcon + '</span>' +
+                '<span class="text-xs font-semibold text-slate-500">' + entry.timestamp + '</span>' +
+              '</div>' +
+              '<div class="flex items-center gap-1.5">' + riskLabels +
+                '<span class="material-symbols-outlined text-slate-300 text-sm ml-1 hover:text-red-500 transition-colors" onclick="event.stopPropagation();deleteHistoryItem(' + entry.id + ')">close</span>' +
+              '</div>' +
+            '</div>' +
+            '<div class="px-5 py-3">' +
+              '<div class="flex flex-wrap items-center gap-x-6 gap-y-1.5 text-xs">' +
+                '<span class="text-slate-400">Stories:</span><span class="font-semibold text-slate-800 -ml-3">' + p.n + '</span>' +
+                '<span class="text-slate-300">|</span>' +
+                '<span class="text-slate-400">Height:</span><span class="font-semibold text-slate-800 -ml-3">' + p.H + ' m</span>' +
+                '<span class="text-slate-300">|</span>' +
+                '<span class="text-slate-400">Concrete:</span><span class="font-semibold text-slate-800 -ml-3">' + p.fc + ' MPa</span>' +
+                '<span class="text-slate-300">|</span>' +
+                '<span class="text-slate-400">Gross Area:</span><span class="font-semibold text-slate-800 -ml-3">' + Number(p.Ag).toLocaleString() + ' mm&sup2;</span>' +
+              '</div>' +
+              '<div class="h-px bg-slate-100 my-2.5"></div>' +
+              '<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">' +
+                '<div class="bg-slate-50 rounded-lg px-3 py-2"><span class="text-[10px] font-semibold text-slate-400 uppercase block">Drift</span><span class="text-sm font-bold text-slate-900">' + Number(r.max_story_drift).toFixed(4) + '</span></div>' +
+                '<div class="bg-slate-50 rounded-lg px-3 py-2"><span class="text-[10px] font-semibold text-slate-400 uppercase block">Sway</span><span class="text-sm font-bold text-slate-900">' + Number(r.max_story_sway).toFixed(2) + ' mm</span></div>' +
+                '<div class="bg-slate-50 rounded-lg px-3 py-2"><span class="text-[10px] font-semibold text-slate-400 uppercase block">Column Fail</span><span class="text-sm font-bold text-slate-900">' + Number(r.column_fail_pct).toFixed(2) + '%</span></div>' +
+                '<div class="bg-slate-50 rounded-lg px-3 py-2"><span class="text-[10px] font-semibold text-slate-400 uppercase block">Torsion</span><span class="text-sm font-bold text-slate-900">' + Number(r.torsion).toFixed(4) + '</span></div>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+    });
+
+    html += '</div>';
+    content.innerHTML = html;
+}
+
+function restoreHistory(id) {
+    var history = getHistory();
+    var entry = history.find(function(e) { return e.id === id; });
+    if (!entry) return;
+    state_params = JSON.parse(JSON.stringify(entry.params));
+    state_results = JSON.parse(JSON.stringify(entry.results));
+    state_limits = entry.limits ? JSON.parse(JSON.stringify(entry.limits)) : null;
+    navigateTo('parameters');
+}
+
 function renderAll() {
     renderSidebar(state_page);
     updateHeaderNav(state_page);
@@ -266,6 +392,7 @@ function renderAll() {
     updateCharts(risks);
     updateAction(state_limits);
     if (state_page === 'dashboard') renderDashboard();
+    if (state_page === 'history') renderHistory();
 }
 
 /* === API ACTIONS === */
@@ -312,6 +439,7 @@ function predictAction() {
         var risks = state_limits ? state_limits.risks : null;
         updateCharts(risks);
         updateAction(state_limits);
+        saveHistory(state_params, state_results, state_limits);
     })
     .catch(function(e) { alert('Network error: ' + e.message); });
 }

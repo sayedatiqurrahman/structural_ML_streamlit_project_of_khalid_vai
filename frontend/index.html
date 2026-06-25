@@ -280,19 +280,69 @@
 <!-- ===== DASHBOARD PAGE ===== -->
 <div id="page-dashboard" class="w-full" style="display:none"><div class="space-y-6" id="dash-content"></div></div>
 
+<!-- ===== HISTORY PAGE ===== -->
+<div id="page-history" class="w-full" style="display:none">
+<div class="max-w-4xl mx-auto w-full" id="history-content"></div>
+</div>
+
 <!-- ===== ABOUT PAGE ===== -->
 <div id="page-about" class="w-full" style="display:none">
-<div class="space-y-6 max-w-2xl">
+<div class="space-y-6 w-full">
 <h1 class="text-3xl font-black text-slate-900 tracking-tight">About</h1>
-<p class="text-slate-500 -mt-4">StructuraML &mdash; ML-powered structural performance prediction.</p>
-<div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6">
+<p class="text-slate-500 -mt-2">StructuraML &mdash; ML-powered structural performance prediction.</p>
+
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+
+<div class="xl:col-span-2">
+<div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 h-full">
 <div class="flex gap-4"><span class="material-symbols-outlined text-blue-500 text-2xl">school</span><div><h3 class="font-bold text-slate-900">Research Background</h3><p class="text-sm text-slate-500 mt-1">This application is developed as part of an M.Sc. thesis focused on predicting structural performance of RC buildings using machine learning.</p></div></div>
 <div class="flex gap-4"><span class="material-symbols-outlined text-blue-500 text-2xl">map</span><div><h3 class="font-bold text-slate-900">Data Source</h3><p class="text-sm text-slate-500 mt-1">Based on over 400 RC structure building data from Bangladesh. Results accuracy may vary according to location.</p></div></div>
 <div class="flex gap-4"><span class="material-symbols-outlined text-blue-500 text-2xl">smart_toy</span><div><h3 class="font-bold text-slate-900">ML Models</h3><p class="text-sm text-slate-500 mt-1">Three Gaussian Process Regression (GPR) models custom-trained from scratch on the collected dataset. Each model uses a Matern 1.5 kernel and was preprocessed with PowerTransformer and StandardScaler to predict column overstress, story drift, and story sway respectively.</p></div></div>
 <div class="flex gap-4"><span class="material-symbols-outlined text-blue-500 text-2xl">trackpad_target</span><div><h3 class="font-bold text-slate-900">Model Performance</h3><p class="text-sm text-slate-500 mt-1">Story Sway R&sup2; = 0.958 &nbsp;|&nbsp; Story Drift R&sup2; = 0.926 &nbsp;|&nbsp; Column Overstress R&sup2; = 0.930</p></div></div>
-<div class="flex gap-4"><span class="material-symbols-outlined text-blue-500 text-2xl">construction</span><div><h3 class="font-bold text-slate-900">Technology Stack</h3><p class="text-sm text-slate-500 mt-1">Streamlit &bull; FastAPI &bull; scikit-learn &bull; pandas &bull; NumPy &bull; Tailwind &bull; Chart.js</p></div></div>
-<div class="flex gap-4"><span class="material-symbols-outlined text-blue-500 text-2xl">mail</span><div><h3 class="font-bold text-slate-900">Contact</h3><p class="text-sm text-slate-500 mt-1">khaled.ce18@gmail.com</p></div></div>
-</div></div></div>
+</div>
+</div>
+
+<div class="xl:col-span-1">
+<div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm h-full">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-blue-500 text-2xl">construction</span>
+<h3 class="font-bold text-slate-900 text-lg">Technology Stack</h3>
+</div>
+<div class="space-y-5">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-sky-500 text-xl">dns</span>
+<div><h4 class="font-semibold text-slate-900 text-sm">Backend Framework</h4><p class="text-xs text-slate-500 mt-0.5">FastAPI &mdash; Modern, fast web framework for building APIs with Python 3.8+ based on standard Python type hints. Handles all prediction and calculation endpoints.</p></div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-500 text-xl">web</span>
+<div><h4 class="font-semibold text-slate-900 text-sm">Frontend</h4><p class="text-xs text-slate-500 mt-0.5">Streamlit &mdash; Powers the web UI, embeds the FastAPI frontend in an iframe. Tailwind CSS provides utility-first styling with a custom design system. Chart.js renders interactive doughnut charts for risk visualization.</p></div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-purple-500 text-xl">neurology</span>
+<div><h4 class="font-semibold text-slate-900 text-sm">Machine Learning</h4><p class="text-xs text-slate-500 mt-0.5">scikit-learn &mdash; Gaussian Process Regression with Matern 1.5 kernel. PowerTransformer applies Yeo-Johnson transformation for normality. StandardScaler standardizes features. Models achieve R&sup2; &gt; 0.92 across all three targets.</p></div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-amber-500 text-xl">table</span>
+<div><h4 class="font-semibold text-slate-900 text-sm">Data Processing</h4><p class="text-xs text-slate-500 mt-0.5">pandas &amp; NumPy &mdash; Data manipulation and numerical computing. Training dataset of 411 RC building records with 14 input features processed through the full ML pipeline.</p></div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-rose-500 text-xl">deployed_code</span>
+<div><h4 class="font-semibold text-slate-900 text-sm">Model Serialization</h4><p class="text-xs text-slate-500 mt-0.5">joblib &mdash; Efficient serialization of scikit-learn pipelines including PowerTransformer, StandardScaler, and GPR models into compact .joblib and .pkl files (~7.6 MB each).</p></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-500 text-2xl">mail</span>
+<div><h3 class="font-bold text-slate-900">Contact</h3><p class="text-sm text-slate-500 mt-0.5">khaled.ce18@gmail.com &mdash; For questions, collaboration, or feedback regarding this research project.</p></div>
+</div>
+</div>
+
+</div></div>
 
 </div>
 </main>
