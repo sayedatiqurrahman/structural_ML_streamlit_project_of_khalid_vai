@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>StructuraML | Structural Performance Predictor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<style>/*__CSS__*/</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0f172a",
+                        secondary: "#475569",
+                        "on-surface": "#1e293b",
+                        "on-surface-variant": "#64748b",
+                        "surface-container-low": "#f1f5f9",
+                        "surface-variant": "#e2e8f0",
+                        "secondary-container": "#e2e8f0",
+                        "on-secondary-container": "#0f172a",
+                        "outline-variant": "#cbd5e1"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        headline: ["Inter"],
+                        display: ["Inter"],
+                        body: ["Inter"],
+                        label: ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="text-on-surface">
+
+<script id="initial-data" type="application/json"><!--__INITIAL_DATA__--></script>
+
+<header class="bg-surface fixed top-0 z-50 flex justify-between items-center w-full px-6 h-16 border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black text-primary">StructuraML</span>
+<div class="hidden md:flex gap-6 ml-8">
+<a class="nav-link text-primary font-bold border-b-2 border-primary pb-1 cursor-pointer" data-page="parameters">Parameters</a>
+<a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" data-page="dashboard">Dashboard</a>
+<a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" data-page="about">About</a>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-surface-variant/50 transition-colors rounded-full cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-primary">info</span>
+</button>
+<button class="p-2 hover:bg-surface-variant/50 transition-colors rounded-full cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</button>
+</div>
+</header>
+
+<div class="flex pt-16 h-screen overflow-hidden">
+
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 hidden lg:flex">
+<div class="px-6 mb-8">
+<h2 class="text-lg font-bold text-on-surface">StructuraML</h2>
+<p class="text-xs text-on-surface-variant">ML Structural Analysis</p>
+</div>
+<nav id="sidebar-nav" class="flex flex-col gap-1"></nav>
+<div class="mt-auto px-6 py-4">
+<div class="rounded-xl overflow-hidden relative h-32 border border-outline-variant" style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%)">
+<div class="absolute inset-0 bg-black/20 p-3 flex flex-col justify-end">
+<span class="text-[10px] uppercase font-bold text-white tracking-widest">GPR Engine</span>
+<span class="text-xs text-white/80">Matern 1.5 Kernel</span>
+</div>
+</div>
+</div>
+</aside>
+
+<main class="flex-1 lg:ml-64 overflow-y-auto bg-slate-50 p-6 lg:p-8">
+<div class="max-w-7xl mx-auto flex flex-col xl:flex-row gap-8">
+
+<!-- ===== PARAMETERS PAGE ===== -->
+<div id="page-parameters" class="w-full" style="display:flex;flex-direction:column;gap:2rem">
+<div class="flex flex-col xl:flex-row gap-8 w-full">
+
+<!-- Left Column: Building Data Collection -->
+<div class="flex-1 space-y-8">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="text-3xl font-black text-slate-900 tracking-tight">Building Data Collection</h1>
+<p class="text-slate-500 mt-1">Enter the 14 building parameters to predict structural responses.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+<section class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200">
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined">architecture</span>
+<h3 class="font-bold">Material Properties</h3>
+</div>
+<div class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Concrete fc (MPa)</label>
+<input id="p_fc" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="24 MPa">
+</div>
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Steel fy (MPa)</label>
+<input id="p_fy" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="413 MPa">
+</div>
+</div>
+</div>
+</section>
+
+<section class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200">
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined">tsunami</span>
+<h3 class="font-bold">Loading Factors</h3>
+</div>
+<div class="grid grid-cols-2 gap-x-4 gap-y-4">
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Seismic Zone (z)</label>
+<input id="p_z" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="0.15">
+</div>
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Resp. Reduction (R)</label>
+<input id="p_R" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="8.0">
+</div>
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Wind Speed v (m/s)</label>
+<input id="p_v" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="58 m/s">
+</div>
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Live Load W (kN/m&sup2;)</label>
+<input id="p_W" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="2.0 kN/m\u00b2">
+</div>
+</div>
+</section>
+
+<section class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200 md:col-span-2">
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined">square_foot</span>
+<h3 class="font-bold">Geometry &amp; Dimensions</h3>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Long Axis La (m)</label>
+<input id="p_La" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="22.0">
+</div>
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Short Axis Lb (m)</label>
+<input id="p_Lb" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="14.5">
+</div>
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">No. of Story (n)</label>
+<input id="p_n" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="7">
+</div>
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Structure Height H (m)</label>
+<input id="p_H" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="26.0">
+</div>
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">GF Height Hgf (m)</label>
+<input id="p_Hgf" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="3.2">
+</div>
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Floor Area A (m&sup2;)</label>
+<input id="p_A" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="220">
+</div>
+</div>
+</section>
+
+<section class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200 md:col-span-2">
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined">construction</span>
+<h3 class="font-bold">Reinforcement &amp; Section</h3>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Rebar Ratio p (%)</label>
+<input id="p_p" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="0.8">
+</div>
+<div>
+<label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Gross Area Ag (sqmm)</label>
+<input id="p_Ag" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="4000000 sqmm">
+</div>
+</div>
+</section>
+</div>
+
+<button id="btn-predict" class="w-full py-5 bg-primary text-white font-bold rounded-2xl shadow-xl shadow-slate-200 hover:bg-slate-800 transition-all transform active:scale-[0.98] flex items-center justify-center gap-3 cursor-pointer">
+<span class="material-symbols-outlined">bolt</span>
+                    PREDICT
+                </button>
+</div>
+
+<!-- Right Column: Results & Risk -->
+<div id="results-panel" class="w-full xl:w-[420px] space-y-6">
+
+<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+<div class="p-5 bg-slate-50 border-b border-slate-200 flex justify-between items-center">
+<h3 class="font-bold text-slate-900">Prediction Results</h3>
+<span id="status-badge" class="px-2 py-1 bg-slate-100 text-slate-500 text-[10px] font-bold rounded">READY</span>
+</div>
+<div class="p-6 space-y-5">
+<div class="flex justify-between items-center">
+<span class="text-slate-500 text-sm">Column Failure %</span>
+<span id="res-column-fail" class="font-bold text-lg text-slate-900">--</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500 text-sm">Max Story Drift</span>
+<span id="res-drift" class="font-bold text-lg text-slate-900">--</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500 text-sm">Max Story Sway</span>
+<span id="res-sway" class="font-bold text-lg text-slate-900">--</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500 text-sm">Torsional Irregularity</span>
+<span id="res-torsion" class="font-bold text-lg text-slate-900">--</span>
+</div>
+<div id="limits-rows"></div>
+<button id="btn-limits" class="w-full py-3 border-2 border-slate-200 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition-colors mt-2 cursor-pointer active:scale-[0.98]">
+                        CALCULATE
+                    </button>
+</div>
+</div>
+
+<div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+<h3 class="font-bold text-slate-900 mb-6">Risk Assessment</h3>
+<div id="risk-charts" class="grid grid-cols-2 gap-y-8">
+<div class="flex flex-col items-center">
+<div class="chart-container mb-1"><canvas id="cht-column" class="risk-chart-canvas"></canvas></div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Column Overstress</span>
+<span id="rl-column" class="text-[10px] font-bold text-slate-400">Pending</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="chart-container mb-1"><canvas id="cht-drift" class="risk-chart-canvas"></canvas></div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Story Drift</span>
+<span id="rl-drift" class="text-[10px] font-bold text-slate-400">Pending</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="chart-container mb-1"><canvas id="cht-sway" class="risk-chart-canvas"></canvas></div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Story Sway</span>
+<span id="rl-sway" class="text-[10px] font-bold text-slate-400">Pending</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="chart-container mb-1"><canvas id="cht-torsion" class="risk-chart-canvas"></canvas></div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Torsion</span>
+<span id="rl-torsion" class="text-[10px] font-bold text-slate-400">Pending</span>
+</div>
+</div>
+<div id="action-box"></div>
+</div>
+
+
+
+</div>
+</div>
+
+<div class="bg-slate-900 rounded-2xl p-6 text-white overflow-hidden relative">
+<div class="relative z-10">
+<h3 class="font-bold text-lg mb-3">About this Application</h3>
+<p class="text-xs text-slate-400 leading-relaxed mb-3">This application is developed for an M.Sc. research-based project.</p>
+<p class="text-xs text-slate-400 leading-relaxed mb-3">Based on over 400 RC structure building data from Bangladesh. The accuracy of results may vary according to location.</p>
+<div class="flex items-center gap-2 pt-2 border-t border-slate-800 text-[10px] font-medium text-slate-300">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span>khaled.ce18@gmail.com</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ===== DASHBOARD PAGE ===== -->
+<div id="page-dashboard" class="w-full" style="display:none"><div class="space-y-6" id="dash-content"></div></div>
+
+<!-- ===== ABOUT PAGE ===== -->
+<div id="page-about" class="w-full" style="display:none">
+<div class="space-y-6 max-w-2xl">
+<h1 class="text-3xl font-black text-slate-900 tracking-tight">About</h1>
+<p class="text-slate-500 -mt-4">StructuraML &mdash; ML-powered structural performance prediction.</p>
+<div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6">
+<div class="flex gap-4"><span class="material-symbols-outlined text-blue-500 text-2xl">school</span><div><h3 class="font-bold text-slate-900">Research Background</h3><p class="text-sm text-slate-500 mt-1">This application is developed for an M.Sc. research-based project.</p></div></div>
+<div class="flex gap-4"><span class="material-symbols-outlined text-blue-500 text-2xl">map</span><div><h3 class="font-bold text-slate-900">Data Source</h3><p class="text-sm text-slate-500 mt-1">Based on over 400 RC structure building data from Bangladesh. Results accuracy may vary according to location.</p></div></div>
+<div class="flex gap-4"><span class="material-symbols-outlined text-blue-500 text-2xl">smart_toy</span><div><h3 class="font-bold text-slate-900">ML Models</h3><p class="text-sm text-slate-500 mt-1">Three Gaussian Process Regression (GPR) models with Matern(nu=1.5) kernel + WhiteKernel, preprocessed with Yeo-Johnson (PowerTransformer) and StandardScaler.</p></div></div>
+<div class="flex gap-4"><span class="material-symbols-outlined text-blue-500 text-2xl">trackpad_target</span><div><h3 class="font-bold text-slate-900">Model Performance</h3><p class="text-sm text-slate-500 mt-1">Story Sway R&sup2; = 0.958 &nbsp;|&nbsp; Story Drift R&sup2; = 0.926 &nbsp;|&nbsp; Column Overstress R&sup2; = 0.930</p></div></div>
+<div class="flex gap-4"><span class="material-symbols-outlined text-blue-500 text-2xl">construction</span><div><h3 class="font-bold text-slate-900">Technology Stack</h3><p class="text-sm text-slate-500 mt-1">Streamlit &bull; scikit-learn GPR &bull; pandas &bull; NumPy &bull; Tailwind &bull; Chart.js</p></div></div>
+<div class="flex gap-4"><span class="material-symbols-outlined text-blue-500 text-2xl">mail</span><div><h3 class="font-bold text-slate-900">Contact</h3><p class="text-sm text-slate-500 mt-1">khaled.ce18@gmail.com</p></div></div>
+</div></div></div>
+
+</div>
+</main>
+</div>
+
+<div class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none opacity-[0.03]">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4fm2PJsJQ1N5E3jc9CYDvJ6bkPsAsYeMHZru5U6XpbrY1sGIbFPlsAXnIWJDQhOVtQVXBxlU5-Chl4vkgMJe7ZE-xcPTRGjsAHHJ0lb60OOOltr_Qq99FaiF3W1bTD9mX3w8aInjqewIGiNyN-kUKByV9nN3RAOjHRYhK5ZD1-edTV0JADFoiEVoAvZ5FNSCQuqWb2fsq71pkzWGmhILZIpu4gZJtzNVP5K2tooCPdNCjrr8_S2PkJps_KBsWBjFuEl8pGsMP51Qq">
+</div>
+<script>/*__JS__*/</script>
+</body></html>

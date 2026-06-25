@@ -1,0 +1,412 @@
+SI No.,Project ID,Referance/ Project Name,"Compressive Strength of Concrete, fc (Mpa)","Yield Strength of Steel, fy (Mpa)",Code Provision,Foundation Type (Deep/Shallow),Structural Irregularity (Yes/No),"Seismic Zone Coefficient, z","Response Reduction Factor, R","Deflection Amplification          Factor, Cd","Importance Factor, I","Basic Wind Speed, v (m/s)","Dimension of Long Axis, La (m)","Dimension of Short Axis, Lb (m)","No of Story, n","Structure Height, H (m)","GF Story Height, Hgf (m)","Typical Floor Live Load, W (KN/sqm)","Typical Floor Area, A (sqm)","Average Column Rebar Percentage, p (%)","Total Column Gross Section Area, Ag (sqmm)",Column Overstressed Percentage (%),Maximum Story Drift (mm),Maximum Story Sway (mm),Maximum Torsional Irregularity
+1,M-01A,8 storied Residential Building at Baridhara,20.68,500,ASCE 7-10,Shallow,No,0.2,6.5,,1,65.7,17.63,12,8,28.04,3.05,2.01,217.2,2.18,1650000,5,12.53,46,1.4
+2,M-02A,8 Storied Residential Building at Dhala,24.13,500,ASCE 7-10,Deep,No,0.2,8,,1,65.7,15.98,11,8,33.22,3.05,2.01,172.05,2.76,2139351,0,7.95,51,1.7
+3,M-03A,"8 Storied Building at Uttara, Dhaka",27.58,500,ASCE 7-10,Deep,No,0.2,8,,1,65.7,13.46,9,8,30.49,3.05,2.92,117.25,1.62,2384511,57,45.42,75,1.2
+4,M-04D ,7 Storied Factory Building at Gazipur,31.03,413,UBC 94,Deep,No,0.28,8,,1.3,80,110.04,52,7,32.97,3.05,3.66,5734.6,1.88,70628891,3.6,52.56,31.36,1.39
+5,M-05D ,3 Storied Store Building at Mirpur Cant.,24.13,413,ASCE 7-10,Shallow,No,0.2,8,,1,65.7,20.95,12,3,10.97,3.05,1.6,247.21,1.86,2747500,5.3,8.25,20.27,1.02
+6,M-06A ,6 Storied Factory at Gazipur,14.51,276,UBC 94,Shallow,Yes,0.15,8,,1.3,58,34.04,25,6,26.06,3.81,1.92,835,1.62,6521277,69.7,54.09,114,1.1
+7,M-07A,1 Storied Utility Building at Chittagong,20.68,413,ASCE 7-05,Shallow,No,0.36,8,,1,67.4,7.92,5,1,6.86,4.26,1.44,36.23,1.56,870966,0,13.75,10.14,1
+8,M-08A,1 Storied Child Care Center at Chittagong,20.68,413,ASCE 7-05,Shallow,No,0.36,8,,1,67.4,7.3,7,1,5.63,3.65,1.44,48.95,1.3,1045159,0,12.84,5.6,1
+9,M-09A,1 Storied Medical Center  at Chittagong,20.68,413,ASCE 7-05,Shallow,No,0.36,8,,1,67.4,7.5,7,1,5.63,3.65,1.44,50.25,1.1,995636,0,12.84,7.5,1
+10,M-10D,5 Storied Factory Building at Gazipur,24.13,500,UBC 94,Deep,No,0.15,8,,1.3,54.02,41.35,18,5,21.36,3.2,3.02,755.88,2.8,8516112,10.4,4.28,10.39,1.19
+11,M-11D,6 Storied Building at Purbani,24.21,500,UBC 94,Deep,No,0.15,8,,1.3,67.4,54,22,6,30.61,4.95,3.02,1184.76,2.57,19247703,0,5.81,24,1.03
+12,M-12A,1 Storied Security & Drivers Rest Room,20.68,413,ASCE 7-05,Shallow,No,0.36,8,,1,67.4,6.22,5,1,5.63,3.65,1.44,29.05,1.56,870966,0,7.33,5.55,1.12
+13,M-13D,7 Storied Factory Building at Dhaka,21.72,500,UBC 94,Shallow,Yes,0.15,8,,1.3,59.72,46.32,30,7,23.83,3.35,3.02,1411.83,2.3,17264482,0,10.08,28,1.13
+14,M-14D,6 Storied Factory Building at Narayangang,13.36,413,UBC 94,Shallow,No,0.15,8,,1,54.16,22.86,14,6,25.3,4.26,2.01,309.98,1.59,2847736,3.1,38.2,38,1.2
+15,M-15D,3 Storied Factory of Building at Uttara,16.97,413,UBC 94,Shallow,Yes,0.15,5,,1.3,54.16,22.61,13,3,16.03,4.06,3.02,304.73,1.65,4331604,0,5.5,10.67,1.33
+16,M-16D,2 Storied Storage Building at Mirpur,15.13,413,UBC 94,Shallow,Yes,0.15,5,,1,54.16,20.87,13,2,13.51,3.27,1.58,263.8,1.33,3439348,20.8,43.76,15,1
+17,M-17D,8 Storied Existing Factory Building at Dhaka,29.58,413,UBC 94,Deep,Yes,0.15,5,,1.3,54.16,55.77,18,8,29.06,3.45,5.03,999.96,2.35,11641312,0,3.67,18,1.36
+18,M-18D,3 Storied Garments Building at Gazipur,29.3,500,UBC 94,Deep,Yes,0.15,5,,1.3,54.16,79.54,70,3,16.21,3.65,3.02,5558.26,2.56,29411554,0,3.06,7,1.06
+19,M-80A,7 Storied Residential Building at Mirpur,24.14,413,ASCE 7-05,Shallow,No,0.15,8,,1,80,33.88,30,7,26.07,3,1.92,1033,1.61,8984498,52.2,58.68,27.8,1
+20,M-81A,7 Storied Residential Building at Mirpur,24.13,413,ASCE 7-05,Shallow,No,0.15,8,,1,71.53,17.18,12,7,26.82,3.05,1.92,208.73,1.57,2250000,100,64.27,75,1.16
+21,M-82A,6 Storied Residential Building at Mirpur,27.58,413,ASCE 7-05,Shallow,No,0.15,8,,1,53.64,10.82,9,6,24.41,3.55,1.92,93.37,2.08,1594836,8.3,4.89,35.11,1.02
+22,M-83A,8 Storied Residential Building at Mirpur ,27.58,413,ASCE 7-05,Shallow,No,0.15,8,,1,58.56,25,18,8,31.16,3.33,1.92,445.75,2,4515000,0,3.36,18.33,1.6
+23,M-84A ,7 Storied Residential Building at Mirpur ,17.24,413,ASCE 7-05,Shallow,No,0.15,8,,1,53.64,15.47,11,7,28.34,3.05,1.19,166.67,1.39,1827500,100,61.95,59,1.05
+24,M-85A ,8  Storied Residential Building at Mirpur ,31.03,500,ASCE 7-05,Shallow,Yes,0.2,5,,1,67.95,22.82,10,8,29.56,3.05,1.19,221,1.96,3300710,0,68.76,62.63,1.2
+25,M-86A,7 storied Residential Building at Pallabi,20.68,413,ASCE 7-05,Shallow,No,0.15,8,,1,57.2,18,12,7,25.6,3.05,1.92,216,2.24,2788626,50,62.1,38,2
+26,M-87A,7 Storied Residential Building at Mirpur 12,27.58,413,ASCE 7-05,Shallow,No,0.15,8,,1,51.4,15.94,11,7,26.51,3.05,1.92,178.52,2.12,1830000,67,35.45,37,1.03
+27,M-88A ,7 Storied Residential Building with Mirpur,31,500,UBC 94,Shallow,No,0.15,8,,1,52.8,24.23,15,7,26.74,3.05,1.92,374,1.93,3465000,52,52.56,18.27,1.04
+28,M-89A ,6 storied Residential Building at Mirpur,24.13,413,UBC 94,Shallow,Yes,0.15,8,,1,57.64,17.6,13,6,23.16,3.05,1.92,221,4.32,1614932,0,37.62,35.4,3
+29,M-90A ,8 Storied Residential Building at Mirpur,20.68,413,UBC 94,Shallow,No,0.15,8,,1,52.8,15.73,11,8,28.04,3.05,1.92,169,1.88,2212500,44.4,62.95,45,1.1
+30,M-92A ,7 Storied Residential Building at Mirpur ,24.13,413,UBC 94,Shallow,No,0.15,8,,1,52.8,18.31,13,7,25.75,3.05,2,230,2.23,2714418,3.6,4.58,26.72,3.06
+31,M-94A,7 Storied Residential Building at Mirpur ,31.03,413,UBC 94,Shallow,No,0.15,8,,1,52.8,15.72,11,7,26.81,3.05,1.92,170,2.69,2562500,0,5.2,17.53,1.04
+32,M-95A,8 Storied Residential Building at Mirpur  11,27.58,413,UBC 94,Shallow,No,0.15,8,,1,52.8,15.75,11,8,29.58,3.05,1.92,170,1.77,2820416,36.4,7.95,39.12,1.3
+33,M-97A ,9 Storied Residential Building at Mirpur,28,413,UBC 94,Deep,No,0.15,8,,1,52.8,32.81,25,9,28.95,3.05,1.92,816,2.3,5672500,71.4,61.58,23.63,1.03
+34,M-98A ,7 storied Residential Building at Mirpur,24.13,413,UBC 94,Shallow,No,0.15,8,,1,57.64,15.7,11,7,24.57,3.05,1.92,170,1.72,2025000,100,68.76,102.4,1.03
+35,M-35D,3 Storied Industrial Building at Chittagong,20.13,500,UBC 94,Shallow,No,0.15,5,,1,72.22,110.75,25,3,18.1,6.61,2.01,7998.37,0.98,15612500,11.5,1.94,29.16,1.08
+36,M-36R,3 Storied Industrial Building at Chittagong,16.01,413,UBC 94,Shallow,No,0.15,5,,1,72.22,77.59,45,3,11.67,3.12,2.01,1453.91,5.25,12290298,0,26.97,11.52,1.4
+37,M-37R,"1 Storied Utility Building at Rupgonj, Narayangonj",16.34,276,UBC 94,Shallow,No,0.15,5,,1,54.17,26.1,6,1,3.75,3.75,2.01,159.99,1.03,1125000,0,3.05,0.31,1.31
+38,M-38D,"3 Storied Mosque Building at Baridhara, Dhaka",17.85,276,UBC 94,Deep,No,0.15,5,,1,58.33,30.53,23,3,14.02,3.66,5.03,729.01,2.18,3421929,100,77.62,51.82,1.39
+39,M-39D,"5 Storied Residential Building at Baunia, Dhaka",20.68,413,UBC 94,Shallow,No,0.15,5,,1,58.33,16.46,9,5,17.68,3.05,2.01,153.74,1.72,1834835,5.9,13.45,4.57,1.13
+40,M-40D,3 Storied Office Building at Comilla,20.68,413,UBC 94,Deep,No,0.15,5,,1,58.33,20.56,18,3,13.2,3.3,5.03,374.21,1.42,6400000,0,3.68,4.32,1.09
+41,M-41D,10 Storied Factory Building at Chittagong,24.13,413,UBC 94,Shallow,No,0.15,5,,1,63.89,40.23,38,10,32.74,3.35,5.03,1527.94,2.19,23864468,5.8,7.33,22.26,1.12
+42,M-42D,12 Storied Commercial Building at Chittagong,33.53,413,UBC 94,Deep,No,0.15,8,,1,72.22,43.84,21,12,37.04,2.89,2.01,997.04,2.31,12118040,0,4.42,47.3,1.11
+43,M-43D,6 Storied Garments Building at Chittagong,24.13,413,UBC 94,Shallow,No,0.15,5,,1,63.89,41.43,38,6,20.12,3.35,5.03,1839.69,2.2,23864468,0,5.63,5.39,1.04
+44,M-44D,"12 Storied Garments Building at Pahartali, Chittagong",33.53,413,UBC 94,Deep,No,0.15,8,,1,72.22,43.84,21,12,37.04,2.89,3.02,997.04,2.31,12118040,29.6,3.87,48.39,1.2
+45,M-45D,"6 Storied Industrial Building at Patiya, Chittagong",25.89,500,UBC 94,Deep,Yes,0.15,5,,1,72.22,47.07,27,6,22.3,5.03,3.02,1174.48,2.57,8624499,84.8,85.57,21.87,1.04
+46,M-46D,"3-Storied Industrial Building at Kattali, Chittagong",11.16,276,UBC 94,Shallow,Yes,0.15,5,,1,72.22,77.59,45,3,11.67,3.12,2.01,1453.91,1.53,8193532,32.3,44.2,25.56,1.5
+47,M-47R,"4 Storied Industrial Building at Patiya, Chittagong",25.89,500,UBC 94,Deep,Yes,0.15,5,,1,72.22,47.07,27,4,18.84,5.03,3.02,1174.48,2.57,8624499,13,10.48,7.86,1.1
+48,M-48D,"2 Storied Industrial Building at Patiya, Chittagong",25.89,500,UBC 94,Deep,Yes,0.15,5,,1,72.22,47.07,27,2,15.49,5.03,3.02,1174.48,2.57,8624499,10.9,5.36,7.36,1.66
+49,M-49D,"1 Storied Factory Building at Rupgonj, Narayangonj",16.34,276,UBC 94,Shallow,No,0.15,5,,1,54.17,26.1,6,1,3.75,3.75,2.01,159.99,1.03,1125000,90,79.73,2.94,1.03
+50,M-51D,"4 Storied Factory Building at Rupgonj, Narayangonj",24.13,413,UBC 94,Shallow,Yes,0.15,5,,1,54.17,56.87,31,4,15.24,3.66,3.02,814.2,1.83,9772238,12.5,16.84,31.75,1.12
+51,M-52D,"17 Storied Factory Building at Mirpur, Dhaka",16.5,413,UBC 94,Shallow,No,0.15,5,,1,58.33,59.22,48,17,51.82,3.05,3.06,2827.44,2.63,37291538,100,75.79,186.25,1.02
+52,M-53D,1 Storied Utility Building at Chittagong,20.78,413,UBC 94,Deep,No,0.15,5,,1,72.22,115.35,34,1,5.7,5.03,1.58,510.85,1.27,2880000,0,4.43,5.61,1
+53,M-54D,"8 Storied Residential Building at Mirpur, Dhaka",17.24,413,UBC 94,Deep,No,0.15,5,,1,58.33,18.11,9,8,27.13,3.05,2.01,172.42,2.31,4270959,0,6.71,26.76,1.14
+54,M-55D,1 Storied Utility Building at Chittagong,20.68,413,UBC 94,Shallow,No,0.15,5,,1,72.22,12.12,5,1,3.68,3.68,1.58,63.53,1.08,1080000,0,2.45,0.43,1.12
+55,M-56D,3 Storied Industrial Building at Chittagong,20.13,345,UBC 94,Shallow,No,0.15,5,,1,72.22,110.75,25,3,13.98,5.13,2.02,2738.85,1.07,15725000,12.9,88.91,36.97,1.1
+57,M-58D,"7 Storied Factory Building at Dhamrai, Dhaka",15.66,413,UBC 94,Deep,Yes,0.15,8,,1,58.33,39.88,32,7,28.65,5.48,3.02,1376.36,1.99,19731573,0,4.28,10.57,1.17
+58,M-59D,"8 Storied Factory Building at at Kalurghat, Chittagong",20.68,413,UBC 94,Deep,Yes,0.15,5,,1,72.22,36.88,36,8,31.01,3.65,5.03,1095.81,2.34,22183388,0,6.22,40.13,1.22
+59,M-60D,"7 Storied Factory Building at Agrabad, Chittagong",20.81,276,UBC 94,Deep,No,0.15,5,,1,72.22,30.78,19,7,21.72,4.11,2.02,880.07,1.86,8083292,13.3,11.31,48.19,1.24
+60,M-61R,5 Storied Industrial Building at Chittagong,20.13,500,UBC 94,Shallow,No,0.15,5,,1,72.22,113.57,24,5,17.97,5.13,3.02,2744.99,1.07,15725000,100,63.69,29.17,1.04
+61,M-62D,"4 Storied Factory Building at Nayapara, Habiganj",19.31,500,UBC 94,Shallow,No,0.25,12,,1,47.78,76.5,31,4,17.5,4.34,3.02,4407.15,1.72,19731573,43.4,64.97,9.35,1.04
+62,M-63D,6 Storied Factory Building at Chittagong,20.16,500,UBC 94,Deep,No,0.15,8,,1,72.22,89.36,27,6,21.74,4.06,2.02,2454.49,2.01,18530286,15.4,12.21,27.63,1.1
+63,M-65D,"8 Storied Factory Building at Kalurghat, Chittagong",20.68,413,UBC 94,Deep,No,0.15,6,,1,72.22,88.2,68,8,23.4,3.9,6.03,5322.85,2.28,59760000,2.3,30.08,17.05,1.4
+64,M-66D,"6 Storied Factory Building at Hathazari, Chittagong",18.69,413,UBC 94,Shallow,No,0.15,5,,1,72.22,33.68,28,6,20.32,3.71,3.02,964.57,2.17,8678073,46.3,77.12,33.63,1.22
+65,M-67D,"6 Storied Factory Building at Sagarika, Chittagong",34.22,413,UBC 94,Deep,No,0.15,8,,1,72.22,40.31,33,6,22.55,2.89,2.02,1508.75,1.37,11689009,0,10.39,28.56,1.07
+66,M-68D,"5 Storied Factory Building at Majhukhan, Gazipur",24.13,500,UBC 94,Deep,Yes,0.15,8,,1,58.33,77.54,36,5,26.47,6.4,5.49,2348.68,1.97,38861342,0,4.56,17.35,1.19
+67,M-69D,"4 Storied Store Building at Bhaluka, Mymensingh",13.94,276,UBC 94,Shallow,Yes,0.15,5,,1,60.28,31.34,30,4,15.65,4.67,3.02,7080.88,0.95,55450109,72.2,76.38,22.28,1.18
+68,M-70D,"10 Storied Store Building at Bordbazar, Gazipur",20.66,413,UBC 94,Shallow,No,0.15,5,,1,59.72,33.9,24,10,36.32,5.33,3.02,1074.89,2.77,12770942,28.1,13.35,53.75,1.21
+69,M-71D,"3 Storied Store Building at Bordbazar, Gazipur",14.66,276,UBC 94,Shallow,Yes,0.15,5,,1,59.72,28.94,8,3,12.28,4.27,3.02,190.17,1.53,1780642,100,97.77,50.39,1.19
+70,M-72D,"3 Storied Factory Building at Bordbazar, Gazipur",21.51,413,UBC 94,Shallow,No,0.15,5,,1,59.72,21.59,16,3,10.51,3.66,2.02,340.04,1.5,2903220,0,7.92,5.37,1.14
+71,M-74D,"1 Storied Utility Building at Dhamrai, Dhaka",20.68,413,UBC 94,Deep,No,0.15,6,,1,58.33,21.87,12,1,5.02,5.02,1.58,285.68,1.98,3870960,0,7.19,2.58,1.11
+72,M-75D,"1 Storied Utility Building at Dhamrai, Dhaka",20.68,413,UBC 94,Deep,No,0.15,6,,1,58.33,12.04,11,1,5.02,5.02,1.58,126.7,1.98,2322576,0,2.02,2.49,1.12
+73,M-76D,"7 Storied Factory Building at Dhulivita, Dhaka",27.58,500,UBC 94,Deep,Yes,0.15,8,,1,58.33,33.1,20,7,24.69,3.65,7.18,6391.73,2.62,15443453,0,10.78,78.93,1.06
+74,M-77D,"2 Storied Utility Building at Dhamrai, Dhaka",24.13,500,UBC 94,Deep,No,0.15,6,,1,58.33,34.11,13,2,9.14,6.4,1.58,500.84,1.98,5677408,0,2.48,10.98,1.1
+75,M-78D,"3 Storied Factory Building at Chadgaon, Chittagong",14.09,276,UBC 94,Shallow,Yes,0.15,5,,1,72.22,53.44,46,3,12.95,4.35,3.02,2442.05,1.59,11039848,51.6,88.05,31.67,1.46
+76,M-79D,"1 Storied Factory Building at Chadgaon, Chittagong",12.62,276,UBC 94,Shallow,Yes,0.15,5,,1,72.22,72.55,36,1,11.72,4.66,3.02,2633.57,1.81,11334171,44.2,80.45,29.98,1.65
+77,M-80R,"1 Storied Factory Building at Mirpur, Dhaka",20.35,413,UBC 94,Shallow,No,0.15,5,,1,58.33,59.22,48,17,51.82,3.05,3.06,2827.44,3.48,48478999,2.2,21.73,36.58,1.01
+78,M-81R,"4 Storied Factory Building at  Nayapara, Habiganj",19.31,500,UBC 94,Shallow,No,0.25,12,,1,47.78,76.5,31,4,17.5,4.34,3.02,4407.15,1.49,29005412,2.5,3.19,8.27,1.04
+79,M-82R,6 Storied Factory Building at Chittagong,20.16,500,UBC 94,Deep,No,0.15,8,,1,72.22,89.36,27,6,21.74,4.06,2.02,2454.49,1.85,23321244,1.5,10.38,25.34,1.1
+80,M-83R,"6 Storied Factory Building at Hathazari, Chittagong",18.69,413,UBC 94,Shallow,No,0.15,5,,1,72.22,33.68,28,6,20.32,3.71,3.02,964.57,1.58,17992532,2.4,8.46,26.71,1.07
+81,M-84R,"4 Storied Store Building at Bhaluka, Mymensingh",13.94,276,UBC 94,Shallow,Yes,0.15,5,,1,60.28,31.34,30,4,15.65,4.67,3.02,7080.88,2.65,75966649,0,8.83,12.69,1.12
+82,M-85R,"10 Storied Store Building at Bordbazar, Gazipur",20.66,413,UBC 94,Shallow,No,0.15,5,,1,59.72,33.9,24,10,36.32,5.33,3.02,1074.89,2.87,15634530,0,7.92,25.37,1.14
+83,M-86R,"3 Storied Store Building at Bordbazar, Gazipur",14.66,276,UBC 94,Shallow,Yes,0.15,5,,1,59.72,28.94,8,3,12.28,4.27,3.02,190.17,3.45,5677408,0,7.19,18.58,1.1
+84,M-87R,"3 Storied Factory Building at Chadgaon, Chittagong",14.09,276,UBC 94,Shallow,Yes,0.15,5,,1,72.22,16.29,14,3,12.95,4.35,3.02,2442.05,3.68,12498489,0,2.02,16.49,1.12
+85,M-88R,"1 Storied Factory Building at Chadgaon, Chittagong",12.62,276,UBC 94,Shallow,Yes,0.15,5,,1,72.22,22.12,11,1,11.72,4.66,3.02,244.79,3.84,10354171,0,10.78,18.93,1.06
+86,M202-A,7 Storied Residential Building at Mirpur,27.58,345,UBC 94,Shallow,No,0.15,8,,1,58.56,12.07,17,7,27.14,2.4,1.92,197.76,1.45,5929969,3.5,46.33,31.01,1.02
+87,M203-A,10 Storied Residential Building at Mohakhali,27.58,345,ASCE 7-05,Deep,No,0.15,8,,1,65.71,12.42,18,10,30.48,3.05,1.92,221.1,0.3,963869,0,49.11,32.29,1.09
+88,M204-A,7 Storied Residential Building at Mirpur,27.58,345,UBC 94,Shallow,No,0.15,8,,1,58.56,12.07,17,7,27.14,2.4,1.92,197.76,2.24,6193784,3.1,45.75,42.14,1.08
+89,M205-A,8 Storied Residential Building at Mirpur,24.13,413,UBC 94,Shallow,No,0.15,8,,1,58.56,24.24,17,8,30.62,2.29,1.92,392.63,0.98,9837353,0,3.66,36.33,1.09
+90,M206-A,7 Storied Residential Building at Mirpur,27.58,413,UBC 94,Deep,No,0.15,8,,1,58.56,17.84,25,7,27.38,2.28,1.92,424.74,2.48,1083937,2.3,48.6,18.36,1.27
+91,M207-A,7 Storied Residential Building at Mirpur,31.03,345,UBC 94,Deep,No,0.15,8,,1,58.11,33.82,11,7,24.4,2.74,1.92,363.99,3.56,2026426,0,2.76,35.06,1.05
+92,M210-A,6 Storied Residential Building at Mirpur,20.68,345,UBC 94,Shallow,No,0.15,8,,1,59.22,12.5,18,6,23.16,1.52,1.92,225,2.87,902462,0,3.81,44.43,1.05
+93,M211-A,7 Storied Residential Building at Mirpur,27.58,413,UBC 94,Deep,No,0.15,8,,1,55.88,15.97,11,7,23.32,2.44,1.92,171.89,0.78,2792656,1.3,38.15,45.68,1.16
+94,M212-A,8 Storied Residential Building at Mirpur,24.13,345,UBC 94,Shallow,No,0.15,8,,1,58.12,11.42,19,8,27.43,2.9,1.92,214.86,2.56,8710863,6.1,39.62,59.1,1.08
+95,M213-A,7 Storied Residential Building at Mirpur,27.58,413,UBC 94,Deep,No,0.15,8,,1,58.56,15.9,11,7,26.07,2.44,1.92,170.95,3.03,3528332,0,5.19,97.46,1.03
+96,M214-A,7 Storied Residential Building at Mirpur,27.99,413,UBC 94,Deep,No,0.15,8,,1,58.56,17.83,12,7,25.01,2.44,1.92,206.63,2.59,9493538,6.3,42.17,7.45,1.05
+97,M215-A,6 Storied Residential Building at Mirpur,20.68,345,UBC 94,Shallow,No,0.15,8,,1,58.12,18.2,13,6,23.93,2.13,1.92,224.42,2.03,3999992,4.8,35.36,32.58,1.12
+98,M216-A,7 Storied Residential Building at Mirpur,27.58,345,UBC 94,Deep,No,0.15,8,,1,58.12,24.57,16,7,25.16,2.44,1.92,366.19,2.76,780353,0,36.88,26.42,1.03
+99,M220-A,7 Storied Residential Building at Mirpur,27.58,345,UBC 94,Deep,No,0.15,8,,1,58.12,35.2,11,7,24.4,1.52,1.92,371.36,2.59,6032035,0,56.43,33.45,1.48
+100,M222-A,7 Storied Residential Building at Mirpur,27.58,345,UBC 94,Deep,No,0.15,8,,1,58.56,24.64,16,7,27.33,3.77,1.92,381.22,3.87,20734393,4.3,57,49.71,1.02
+101,M223-A,7 Storied Residential Building at Mirpur,24.13,345,UBC 94,Deep,No,0.15,8,,1,49.17,15.72,11,7,28.29,2.44,1.92,169.67,2.01,7865327,0,4.27,49.55,1.06
+102,M224-A,7 Storied Residential Building at Mirpur,27.58,500,UBC 94,Shallow,No,0.15,8,,1,58.56,10.88,15,7,28.8,1.5,1.92,163.08,2.7,39326903,0,3.3,42.38,1.12
+103,M226-A,7 Storied Residential Building at Mirpur,27.58,345,UBC 94,Deep,No,0.15,8,,1,58.12,10.97,16,7,26.82,1.83,1.92,170.53,2.67,2388768,2.3,34.44,39.15,1.07
+104,M227-A,7 Storied Residential Building at Mirpur,27.58,345,UBC 94,Deep,No,0.15,8,,1,58.12,15.92,11,7,28.73,1.52,1.92,162.26,3.75,3224353,2.1,36.88,30.55,1.05
+105,M228-A,7 Storied Residential Building at Mirpur,24.13,345,UBC 94,Deep,No,0.15,8,,1,44.7,18.42,9,7,25.51,2.44,1.92,168.44,2.78,5543252,0,33.84,39.27,1.26
+106,M229-A,8 Storied Residential Building at Mirpur,24.13,345,UBC 94,Deep,No,0.15,8,,1,49.17,17.25,9,8,26.97,1.83,1.92,159.34,1.67,8984324,2.5,8.23,65.55,1.16
+107,M230-A,7 Storied Residential Building at Mirpur,20.68,345,UBC 94,Deep,No,0.15,8,,1,53.64,10.78,15,7,26.97,1.52,1.92,156.34,1.98,2682435,0,57,33.55,2.88
+108,M233-A,7 Storied Residential Building at Mirpur,24.13,413,UBC 94,Deep,No,0.15,8,,1,53.64,14.61,12,7,21.05,2,1.92,166.35,2.04,7926788,0,4.8,21.72,1.07
+109,M234-A,7 Storied Residential Building at Mirpur,27.58,345,UBC 94,Deep,Yes,0.15,8,,1,58.12,16.57,11,7,26.84,2.44,1.92,168.04,2.61,6543367,3.3,52.16,41.31,1.03
+110,M235-R,7 Storied Residential Building at Mirpur,31.03,500,UBC 94,Deep,No,0.15,8,,1,58.12,15.93,11,7,28.42,1.22,2.01,180.28,2.89,935466,6.9,43.09,40.36,1.04
+111,M236-A,8 Storied Residential Building at Mirpur,24.13,345,UBC 94,Shallow,No,0.15,8,,1,53.64,12.58,18,8,26.97,1.83,2.01,227.83,2.65,9984356,0,5.18,36.98,1.24
+112,M237-A,8 Storied Residential Building at Mirpur,27.58,413,UBC 94,Deep,No,0.15,8,,1,71.97,17.55,12,8,26.95,2.44,2.01,209.03,3.78,1086578,5.3,33.49,21.62,1.03
+113,M238-A,6 Storied Residential Building at Mirpur,24.13,345,UBC 94,Deep,No,0.15,8,,1,58.12,10.84,16,6,23.93,1.52,2.01,172.56,1.07,309879,0,11.28,55.93,1.06
+114,M239-A,5 Storied Residential Building at Mirpur,20.68,413,UBC 94,Deep,No,0.15,8,,1,58.12,18.11,13,5,20.43,2.44,1.92,226.12,2.82,2086468,0,5.19,27.98,1.08
+115,M240-A,7 Storied Residential Building at Mirpur,27.58,345,UBC 94,Shallow,No,0.15,8,,1,53.64,18.39,9,7,26.97,1.52,2.01,169.51,1.39,7859657,0,6.71,43.36,1.03
+116,M241-A,7 Storied Residential Building at Mirpur,24.13,345,UBC 94,Deep,No,0.15,8,,1,53.64,11.84,15,7,26.97,1.52,1.92,171.43,1.54,5086359,0,10.06,66.23,1.14
+117,M-37R,"1 Storied Utility Building at Rupgonj, Narayangonj",16.34,276,UBC 94,Shallow,No,0.15,5,,1,54.17,26.1,6,1,3.75,3.75,2.01,159.99,1.63,1125000,0,39.55,0.31,1.31
+118,M-382D,"6 Storied RC Residential Building  at Uttara, Dhaka",27.57,413,UBC 94,Deep,Yes,0.15,8,,1,60.35,90.48,35,6,23.01,3.75,1.43,3173,2.03,2716022,61.1,65.9,30.3,1.41
+119,M-383D,8 Storied Residential Building at Gazipur,18.74,413,UBC 94,Shallow,Yes,0.15,8,,1,58.11,64.81,35,8,29.26,3.82,2.01,2271.72,2.3,14864486,0,37.19,46.6,1.02
+120,M-383D,4 Storied Factory Building at Gazipur,16.65,345,UBC 94,Shallow,Yes,0.15,8,,1,58.11,10.92,5,4,17.52,3.05,4.02,52.63,1.94,870966,100,58.52,106,1.16
+121,M-250D,6 Storied Garments Building at Chattogram,21.02,413,UBC 94,Deep,Yes,0.15,5,,1,71.52,36.34,23,6,23.77,3.36,2.01,853.25,2.04,4799990,100,55.78,58,1.02
+122,M-250R,6 Storied Garments Building at Chattogram,24.13,413,UBC 94,Deep,Yes,0.15,5,,1,71.52,36.34,23,6,23.77,3.36,2.01,853.25,2.84,4799990,0,31.39,28.52,1.03
+123,M-253D,5 Storied Factory Building at Chattogram,27.57,413,UBC 94,Shallow,No,0.15,5,,1,71.52,28.42,25,5,16.58,4.39,3.02,713.05,1.8,3379348,32,37.49,27.34,1.15
+124,M-300D,1 Storied Multipurpose Building at Mirpur,20.68,413,ASCE 7-05,Deep,Yes,0.15,4.5,,1,40,23.27,9,1,4.78,4.78,2.01,202.5,4.9,2025000,0,53.13,3.2,1.03
+125,M-304D,3 Storied University Building at Dhaka,31,413,UBC 94,Deep,No,0.15,8,,1,58.56,67.8,30,3,21.5,3.6,2.5,2013.7,2.06,4256030,18,0.92,0.3,1.17
+126,M-305D,6 Storied Residential Building at Dhaka,22.06,500,UBC 94,Shallow,Yes,0.15,8,,1,58.56,15.95,11,6,23.46,3.05,1.92,175.45,2.45,1277417,0,0.98,32.3,1.02
+127,M-306D,8 Storied Residential Building at Dhaka,27.57,413,UBC 94,Deep,Yes,0.15,8,,1,58.56,14.57,11,8,28.95,3.05,1.92,157.64,1.7,2703220,0,4.26,61.6,1.28
+128,M-307D,6 Storied Residential Building at Mirpur,20.68,413,UBC 94,Shallow,Yes,0.15,8,,1,58.56,17.6,13,6,23.62,3.05,1.92,220,2,1605000,86.6,12.2,28.2,1.35
+129,M-308D,9 Storied Residential Building at Uttara,24.13,413,UBC 94,Deep,Yes,0.4,8,,1,31.3,14.73,11,9,29.11,3.81,1.92,156,1.83,3148381,0,7.9,5.07,1.09
+130,M-309R,7 Storied Residential Building at Dhaka,20.68,413,UBC 94,Shallow,Yes,0.15,8,,1,58.56,27.88,14,7,26.58,3.5,1.92,390.3,1.25,3621528,48.2,8.08,7.9,1.22
+131,M-310D,7 Storied Residential Building at Khulna,20.68,413,ASCE 7-05,Deep,Yes,0.09,8,,1,65.71,19.51,12,7,22.25,3.05,1.92,240.75,1.54,1827093,100,11.7,17.85,1.12
+132,M-311 D,"7 Storied Residential Building at Mirpur, Dhaka",24.13,413,UBC 94,Shallow,No,0.15,8,,1,58.56,15.95,11,7,26.51,3.05,1.2,175.45,2.02,1703222,32,6.72,49.92,1.05
+133,M-312 D,7 Storied Residential Building at Dhaka,20.68,413,UBC 94,Deep,Yes,0.15,8,,1,58.56,24.32,15,7,25.53,3.05,1.2,370.9,2.03,4265630,11.3,14.98,31.7,1.05
+134,M-313D,7 Storied Residential Building at Mirpur ,20.68,413,UBC 94,Deep,Yes,0.15,8,,1,58.56,17.72,13,7,27.43,3.05,1.92,222.38,2.67,2160774,0,26.43,26.5,1.15
+135,M-314D,6 Storied Residential Building at Dhaka,20.68,413,UBC 94,Shallow,No,0.15,8,,1,58.56,17.6,13,6,23.62,3.05,1.92,220,2.02,1605000,70,47.85,26.5,1.18
+136,M-315D,"8 Storied Residential Building at Mirpur-10, Dhaka",24.13,413,UBC 94,Deep,Yes,0.15,8,,1,58.11,14.57,11,8,28.95,3.05,1.92,157.64,2.16,2229673,0,33.99,40,1.03
+137,M-316D,6 Storied Residential Building at Mirpur,20.68,413,UBC 94,Shallow,Yes,0.15,8,,1,58.56,17.6,13,6,23.62,3.05,1.92,220,2,1306000,90,57.83,100.89,1.38
+138,M-317-D,4 Storied Commercial Building at Dhaka,17.23,413,UBC 94,Shallow,No,0.15,8,,0,58.56,14.5,13,4,16.92,3.05,1.92,184.87,1.35,1321288,0,32.61,21.4,1.01
+139,M-322 D,6 Storied Residential Building  at Dhaka,20.68,413,UBC 94,Shallow,Yes,0.15,8,,1,58.56,17.6,13,6,23.62,3.05,1.92,220,2.31,1605000,86.6,40.23,73.38,1.34
+140,M-323D,7 Storied Residential Building at Dhaka,24.13,413,UBC 94,Deep,Yes,0.15,8,,1,58.56,15.2,11,7,28.8,3.05,1.92,165.68,2.87,2012899,0,35.05,23.5,1.33
+141,M-324 D,10 Storied Residential Building at Uttara,24.13,413,UBC 94,Shallow,Yes,0.15,8,,1,53.64,21.65,15,10,27.9,3.2,1.92,324.75,3.18,2295652,0,31.07,20.52,1.04
+142,M-325 D,7 Storied Residential Building at Dhaka,24.14,413,UBC 94,Deep,Yes,0.15,8,,1,53.64,18.18,12,7,26.98,3.05,1.92,226.9,2.32,2819349,0,55.47,38.34,1.08
+143,M-326 D,7 Storied Residential Building at Mirpur ,24.14,413,UBC 94,Deep,yes,0.15,8,,1,49.18,15.55,11,7,26.22,3.36,1.92,167.47,2.22,2245157,0,7.78,14.7,1.03
+144,M-327D,6 Storeid Residential  Building at Dhaka,20.68,413,UBC 94,Shallow,Yes,0.15,8,,1,58.68,17.6,13,6,23.62,3.05,1.92,220,3.86,1425000,90,65.53,113.33,1.55
+145,M-328D,"7 Storied Building at Baridhara, Dhaka",27.58,413,UBC 94,Deep,Yes,0.15,8,,1,58.68,17.36,13,7,25.6,3.05,1.92,225.68,3.28,2032254,0,7.62,34.6,1.49
+146,M-330D,7 Storied Residential Building at Chattogram,27.58,413,UBC 94,Deep,Yes,0.15,8,,1,72.64,18.63,13,7,27,3.05,1.92,232.88,2.16,1925093,50,34.44,27,1.21
+147,M-332D,7 Storied Residential Building at Baridhara,27.58,413,UBC 94,Deep,Yes,0.15,8,,1,58.68,17.83,12,7,23.92,2.6,1.92,214.67,3.2,2321560,0,54.86,29.44,1.11
+148,M-333D,10 Storied Commertial Building  at Chattogram,24.14,413,UBC 94,Deep,Yes,0.08,8,,1,72.42,43.12,43,10,36.57,3.05,4.78,1848.55,1.98,16454806,46,55.47,21.1,1
+149,M-334D,7 Storied Residential Building Sylhet,20.68,413,UBC 94,Deep,Yes,0.15,8,,1,35.76,17.72,13,7,27.43,3.05,1.92,222.39,1.76,2164854,0,31.03,26,1.15
+150,M-335D,7 Storied RC Building at Chittagong,20.68,413,UBC 94,Shallow,Yes,0.28,8,,1,79.59,17.31,13,7,25.91,3.36,2.1,217.59,2,3510961,36,27.13,93.3,1.01
+151,M-336D,5 Storied Multipurpose Building at Mirpur 10,24.13,413,UBC 94,Shallow,Yes,0.15,8,,1,58.12,73.58,22,5,24.74,3.6,2,1651.87,2.51,12887500,0,25.5,41.52,1.11
+152,M-337D,9 Storied Commercial Building  at Chittagong,20.68,413,UBC 94,Deep,No,0.15,8,,1,72.4,42.9,42,9,33.53,3.04,4.8,1814.67,3.12,16841902,11,47.24,16.9,1.04
+153,M-338D,7 Storied Residential Building at Mirpur 12,20.68,413,UBC 94,Deep,no,0.15,8,,1,58.12,15.2,11,7,28.8,1.52,1.92,165.68,2.08,1980000,0,34.16,23.45,1.35
+154,M-339D,10 Storied Commertial Building  at Uttara,17.24,413,UBC 94,Deep,no,0.15,8,,1,58.68,14.2,13,10,31.1,3.66,1.92,182.47,2.46,2286975,62,35.36,7.5,1.11
+155,M-340D,4 Storied Commercial Building at Dhaka,17.24,345,UBC 94,Shallow,No,0.15,5,,1,58.68,49.5,18,4,14.8,2.74,4,883.08,2.24,3419348,46,31.25,6.5,1.06
+156,M-341D,6 Stored Commertial Building at Dhaka,24.13,413,UBC 94,Shallow,No,0.15,8,,1,58.68,57.65,27,6,22.9,1.52,4.8,1581.92,2.1,10042098,10,40.23,36,1.1
+157,M-342D,14 Storied Commercial Building at Dhaka,31.03,500,UBC 94,Deep,No,0.4,12,,1,31.3,67.8,30,14,52.3,3.6,2.1,2013.66,2.68,39754688,32,70.42,114.5,1.14
+158,M-500D,8 Storied Residential Building at Dhaka,24.13,413,UBC 94,Deep,No,0.15,8,,1,60.22,21.64,6,8,29.26,3.66,3.02,131.92,2.32,1796125,0,2.3,60.62,1.41
+159,M-501D,5 Storied Residential Building at Dhaka,24.13,500,UBC 94,Shallow,No,0.15,8,,1,58.68,17.93,7,5,20.42,2.13,2.01,126.59,1.79,1602578,0,5.45,15,1.02
+160,M-502D,7 Storied Residential Building at Sylhet,24.13,500,UBC 94,Deep,Yes,0.15,8,,1,58.68,14.63,14,7,26.51,2.13,2.1,209.5,1.88,4238702,0,3.89,15.58,1.16
+161,M-504D,"10 Storied Residential Building at Mirpur-11, Dhaka",27.58,500,UBC 94,Deep,No,0.15,8,,1,42.91,23.67,13,10,36.57,3.05,3.02,298.72,2.42,4963862,0,3,40.17,1.1
+162,M-506D,"4 Storied Residential Building at Mirpur-11.5, Dhaka",27.58,500,UBC 94,Shallow,No,0.4,8,,1,58,14.47,7,4,20.42,2.14,2.01,105.78,1.38,1641288,0,11.28,32,1.09
+163,M-507D,"7 Storied Residential Building at Mirpur-12 , Dhaka",27.58,500,UBC 94,Deep,Yes,0.15,8,,1,59,13.97,14,7,28.65,3.66,2.01,189.01,1.89,2415479,0,13.11,19.8,1.38
+164,M-508D,7 Storied Residential Building at Uttara,27.58,500,UBC 94,Deep,No,0.15,8,,1,58.69,14.68,12,7,26.21,1.82,2.01,179.68,1.83,2651608,0,4.75,55.66,1.58
+165,M-509D,7 Storied Residential Building at Dhaka,27.58,500,UBC 94,Deep,No,0.15,8,,1,58.69,13.2,12,7,27.43,3.05,2.01,153.78,2.12,1672255,0,3.72,34.12,1.43
+166,M-510D,5 Storied Residential Building at Dhaka,27.58,500,UBC 94,Shallow,No,0.15,8,,1,58.69,15,6,5,24.38,3.05,2.01,87,2.16,1811609,0,2.65,24.46,1.22
+167,M-511D,10 Storied Residential Building at Dhaka,27.58,500,UBC 94,Deep,No,0.15,8,,1,58.69,21.15,15,10,35.66,2.14,2.01,307.1,3.11,2972898,0,5.03,100.6,1.31
+168,M-512D,"6 Storied Residential Building at Mirpur-11, Dhaka",27.58,500,UBC 94,Deep,No,0.15,8,,1,58.69,13.97,14,6,28.65,3.65,2.01,189.01,1.81,2415479,0,13.41,19.8,1.38
+169,M-513D,"5 Storied Residential Building at Mirpur-11, Dhaka",27.58,500,UBC 94,Deep,No,0.15,8,,1,58.69,16.61,10,5,20.42,2.14,2.01,161.95,1.53,2314834,0,2.93,13.9,1.02
+170,M-514D,"9 Storied Residential Building at Mirpur-11, Dhaka",27.58,500,UBC 94,Deep,No,0.15,8,,1,58.69,26,13,9,33.53,3.05,2.01,328.9,2.79,4319992,0,3.66,32.6,1.1
+171,M-515D,"5 Storied Residential Building at Pallabi, Dhaka",27.58,413,UBC 94,Deep,No,0.15,8,,1,58.69,20.88,6,5,20.42,2.14,2.01,130.5,1.19,2043867,0,3.66,18.34,1.04
+172,M-516D,"6 Storied Residential Building at Pallabi, Dhaka",24.13,413,UBC 94,Deep,No,0.15,8,,1,58.69,13.41,10,6,23.46,2.14,2.01,138.93,1.91,898063,0,4.63,18.28,1.11
+173,M-517D,6 Storied Residential Building at Dhaka,17.24,413,UBC 94,Deep,No,0.15,8,,1,58.69,35.35,11,6,23.46,2.14,2.01,388.85,2,5140635,5,4.27,15.49,1.04
+174,M-518D,"12 Storied Residential Building at Uttara, Dhaka",27.58,500,UBC 94,Deep,No,0.15,8,,1,58.69,19.68,19,12,45.72,2.14,2.01,371.56,2.96,6990954,51,10.67,156.5,1.26
+175,M-519D,4 Storied Residential Building at Dhaka,27.58,500,UBC 94,Deep,No,0.15,8,,1,58.69,18.14,10,4,17.37,2.14,2.01,180.49,1.54,2369028,0,4.18,16.1,1.02
+176,M-521D,8 Storied Residential Building at Dhaka,27.58,500,UBC 94,Deep,No,0.15,8,,1,58.69,22.35,12,8,29.26,1.82,2.01,267.31,2.83,4147734,0,2.27,13.8,1.1
+177,M-522D,6 Storied Residential Building at Dhaka,27.58,500,UBC 94,Deep,No,0.15,8,,1,58.69,13,11,6,23.31,2.3,2.01,143,2.47,2043867,0,7.74,26.9,1
+178,M-523D,10 Storied Residential Building at Dhaka,27.58,500,UBC 94,Deep,No,0.15,8,,1,58.69,34.84,13,10,36,2.44,2.01,448.74,2.96,5388376,0,3.66,51.8,1.19
+179,M-524D,5 Storied Residential Building at Dhaka,24.13,413,UBC 94,Deep,No,0.15,8,,1,58.69,17.1,9,5,23.46,2.14,2.01,147.06,1.68,2152254,0,3.81,25.36,1.32
+180,M-525D,9 Storied Residential Building at Mirpur,24.13,413,UBC 94,Deep,No,0.15,8,,1,58.69,21.18,11,9,33.52,3.05,2.01,239.33,2.36,2988381,0,2.87,28.5,1.29
+181,M-527D,4 Storied Residential Building at Dhaka,17.24,413,UBC 94,Deep,No,0.15,8,,1,58.69,17.4,12,4,20.11,1.82,2.01,206.02,1.31,2399995,0,5.94,27.2,1.06
+182,M-528D,6 Storied Residential Building at Dhaka,24.13,413,UBC 94,Deep,No,0.15,8,,1,58.69,26.33,9,6,26.51,2.14,2.01,241.18,1.71,2794833,0,5.24,45.7,1.08
+183,M-529D,4 Storied Residential Building at Mirpur,17.24,413,UBC 94,Deep,No,0.15,8,,1,58.69,35.95,8,4,20.11,1.82,2.01,271.78,1.11,3212897,0,4.57,19.95,1.05
+184,M-530D,16 Storied Residential Building at Dhaka,24.13,413,UBC 94,Shallow,No,0.15,8,,1,55,47.95,18,16,56.38,1.21,2.01,842.96,3.86,10930301,61,22.25,162.5,1.45
+185,M-531D,"7 Storied Residential Building at mirpur, Dhaka",25,413,UBC 94,Shallow,No,0.15,8,,1,59,32.3,16,7,29.5,2.74,1.91,505.17,2.59,7076115,72,8.56,40.22,1.32
+186,M-532D,7 Storied Residential Building at Dhaka,27.58,500,UBC 94,Shallow,No,0.15,8,,1,58.69,15.4,11,7,30.3,1.5,1.92,167.4,2.31,2596250,0,10.68,51.12,1.12
+187,M-533D,6 Storied Residential Building at Chattogram,24.13,413,UBC 94,Deep,No,0.15,8,,1,71.55,17.88,12,6,26.82,1.82,1.92,217.24,2.18,1435610,0,7.32,75.31,1.14
+188,M-534D,8 Storied Residential Building at Dhaka,24,413,UBC 94,Shallow,No,0.15,8,,1,58.69,16.76,11,8,28.64,1.2,1.92,184.36,2.45,1922013,11,6.1,30.05,1.54
+189,M-535D,"7 Storied Residential Building at Mirpur, Dhaka",24.13,413,UBC 94,Deep,No,0.15,8,,1,58.69,15.75,11,7,29.56,2.14,1.92,170.89,2.41,3967080,0,8.29,41.2,1.13
+190,M-536D,"7 Storied Residential Building at Mirpur DOHS, Dhaka",24.13,413,UBC 94,Shallow,No,0.15,8,,1,58.69,15.75,11,7,28.95,1.52,1.89,169,2.11,4095046,25,10.3,42.69,1.09
+191,M-537D,"7 Storied Residential Building at Pallabi, Dhaka",24.13,413,UBC 94,Shallow,No,0.15,8,,1,58.69,32.3,16,7,29.49,2.74,1.92,505.17,2.31,6727729,0,8.25,39.53,1.26
+192,M-539D,"6 Storied Residential Building at Mirpur DOHS, Dhaka",24.13,413,UBC 94,Deep,No,0.15,8,,1,58.69,12.47,11,6,24.48,1.82,2.01,142.53,1.91,6245768,11,3.66,17.48,1.04
+193,M-540D,"6 Storied Residential Building at Mirpur , Dhaka",24.13,413,UBC 94,Deep,No,0.15,8,,1,58.69,16.3,11,6,23.46,2.14,2.01,185.82,1.82,7025941,16.7,3.66,34,1.06
+194,M-541D,7 Storied Residential Building at Mirpur DOHS,24.13,413,UBC 94,Deep,No,0.15,8,,1,58.69,14.47,11,7,26.51,2.14,2.01,154.83,1.88,4196631,0,4.88,30.73,1.16
+195,M-542D,7 Storied Residential Building at Dhaka,27.58,413,UBC 94,Deep,No,0.15,8,,1,58.69,32,11,7,27.12,2.14,2.01,346.24,2.19,10172001,0,2.82,22.6,1.1
+196,M-543D,"4 Storied Residential Building at Pallabi, Dhaka",24.13,413,UBC 94,Deep,No,0.15,8,,1,58.69,17.6,5,4,17.06,1.82,2.01,93.28,1.56,1422079,0,3.66,11.4,1.13
+197,M-545D,8 Storied Residential Building at Dhaka,24.13,413,UBC 94,Deep,No,0.15,8,,1,58.69,18,11,8,29.56,2.14,2.01,198,2.53,2104047,0,7.92,55.62,1.37
+198,M-546D,7 Storied Residential Building at Mirpur DOHS,24.13,413,UBC 94,Deep,No,0.15,8,,1,58.69,31.16,13,7,26.51,2.14,2.01,407.57,2,2009720,0,5.18,30.62,1.51
+199,M-548D,8 Storied Commertial Building at Chattogram,27.58,500,UBC 94,Deep,No,0.15,8,,1,73.76,49.84,39,8,30.78,3.66,6,1919.84,4.56,2785457,68,7.05,43.45,1.25
+200,M549-A,10 Storied Residential Building at Comilla,20.68,413,UBC 94,Deep,Yes,0.15,8,,1,58.11,18.35,14,10,33.52,3.05,2.01,231.7,1.67,2868381,0,7.13,18.62,1.08
+201,M550-A,7 Storied Residential Building at Comilla,20.68,413,UBC 94,Deep,Yes,0.15,8,,1,58.11,24.46,24,7,26.21,3.05,2.01,400.89,1.4,7252290,0,4.69,13.68,1.06
+202,M551-A,10 Storied Residential Building at Dhaka,20.68,413,UBC 94,Deep,Yes,0.15,8,,1,58.11,30.33,18,10,32.61,3.05,2.01,451.81,1.34,8082503,0,5.09,28.88,1.15
+203,M552-A,4 Storied Residential Building at Comilla,20.68,413,UBC 95,Deep,No,0.15,8,,1,58.11,10.41,9,5,17.35,3.05,2.01,98.79,1.72,684000,0,3.78,15.75,1.12
+204,M553-A,5 Storied Residential Building at Mymensingh,20.68,413,UBC 94,Deep,No,0.15,8,,1,58.11,15.37,8,5,17.27,3.05,2.01,109.74,1.67,872450,0,5.55,23.41,1.04
+205,M554-A,5 Storied Residential Building at Gazipur,20.68,413,UBC 94,Deep,No,0.15,8,,1,58.11,14.17,11,5,17.37,3.05,2.01,153.21,1.48,762652,0,4.85,21.45,1.03
+206,M559-A,6 Storied Residential Building at Comilla,20.68,413,UBC 94,Deep,No,0.15,8,,1,58.11,13.61,10,6,20.42,3.05,2.01,123.52,1.2,2200270,0,4.24,19.67,1.08
+207,M560-A,10 Storied Residential Building at Mymensingh,20.68,413,UBC 94,Deep,No,0.15,8,,1,58.11,16.36,16,10,32.61,3.05,2.01,255.83,2.6,4221023,0,4.24,13.22,1.06
+208,M561-A,6 Storied Residential Building at Comilla,20.68,413,UBC 94,Deep,No,0.15,8,,1,58.11,11.86,10,6,20.42,3.05,2.01,103.78,1.89,2356449,0,5.33,18.72,1.08
+209,M562-A,7 Storied Hospital Building at Mymensingh,20.68,345,UBC 94,Deep,No,0.15,8,,1,58.11,22.81,13,7,24.4,4.13,3.02,256.85,1.8,4025798,0,5.82,11.56,1.04
+210,M-635D,3 Storied Industrial Building at Chittagong,20.13,500,UBC 94,Shallow,No,0.15,5,,1,72.22,110.75,25,3,18.1,6.61,2.01,7998.37,0.98,15612500,11.5,1.94,29.16,1.08
+211,M-636R,3 Storied Industrial Building at Chittagong,16.01,413,UBC 94,Shallow,No,0.15,5,,1,72.22,77.59,45,3,11.67,3.12,2.01,1453.91,5.25,12290298,0,30.8,11.52,1.24
+212,M-637R,"1 Storied Utility Building at Rupgonj, Narayangonj",16.34,275,UBC 94,Shallow,No,0.15,5,,1,54.17,26.1,6,1,3.75,3.75,2.01,159.99,1.03,1125000,0,52.88,0.31,1.31
+213,M-638R,9 Storied Residential Building at Khulna ,27.58,413,UBC 94,Deep,No,0.08,5,,1,66.11,27.76,9,9,33.23,3.35,2.01,249.65,1.43,5022571,0,64.13,114.07,1.3
+214,M-639R,6 Storied Madrasa at Basundhara,27.58,413,UBC 94,Deep,Yes,0.15,5,,1,58.33,15.79,25,6,24.85,3.51,2.87,388.28,3.41,4915306,0,58.97,90.96,1.27
+215,M-640R,14 Storied Commercial Building at Uttara,27.58,413,UBC 94,Deep,Yes,0.15,5,,1,58.33,71.34,64,14,60.66,3.2,2.87,3318.43,2.4,15000945,6.8,55.9,101.6,1.29
+216,M-641R,3 Storied Office Building at Dhaka,20.82,413,UBC 94,Shallow,Yes,0.25,5,,1,58.33,107.71,10,3,18.15,3.3,2.87,1122.34,1.31,11400625,3.1,29.37,15.75,1.62
+217,M-642R,2 Storied Factory Building at Mymensingh ,20.68,413,UBC 94,Shallow,Yes,0.15,5,,1,50.01,45.75,27,2,9.98,2.1,3.01,1215.58,1.41,15795000,0,57.72,18.44,1.9
+218,M-643R,4 Storied Store Building at Mymensingh ,25.24,413,UBC-94,Shallow,Yes,0.15,6,,1,50.01,90.48,27,4,22.4,4.2,5.74,2413.53,1.51,23442500,0,68.59,11.02,1.21
+219,M-644R,4 Storied Office Building at Dhaka,20.82,413,UBC-94,Shallow,Yes,0.25,6,,1,58.33,107.68,10,4,18.15,3.3,3.02,1120.98,1.41,11411250,0,53.79,31.16,1.17
+220,M-645R,6 Storied Garments Building at Mymensingh ,27.58,413,UBC-94,Shallow,Yes,0.25,12,,1,50.01,108.58,39,6,30.78,2.43,4.02,4207.23,1.65,41532820,0,32.08,10.83,1.05
+221,M-646R,1 Storied Utility Building at Chittagong,19.68,413,UBC -94,Deep,Yes,0.15,6,,1,72.22,91.55,68,1,11.1,2.57,0,8068.3,1.57,13901250,0,48.57,26.88,1.22
+222,M-647R,3 Storied Factory Building at Chittagong,20.68,500,UBC-94,Shallow,No,0.15,8,,1,72.22,80.26,15,3,16.61,3.2,4.03,1223.16,2.27,12414169,0,60.8,20.83,1.15
+223,M-648R,1 Storied Utility Building at Chittagong,20.13,500,UBC-94,Shallow,No,0.15,6,,1,72.22,61.17,15,2,17.06,6.91,5.76,927.34,1.42,8695000,0,112.14,33.31,1.55
+224,M-649R,2 Storied Utility Building at Mymensingh ,20.68,500,UBC-94,Shallow,No,0.25,6,,1,50.01,71.2,28,2,15.66,3.43,3.02,2027.04,1.65,13840000,0,48.87,32.91,1.04
+225,M-650R,4 Storied Factory Building at Chittagong,20.68,500,UBC-94,Shallow,No,0.15,6,,1,72.22,113.57,24,4,19.48,3.63,3.02,2740.44,1.2,19772500,0,54.38,6.7,1.03
+226,M-651R,3 Storied Factory Building at Mymensingh ,14.1,276,UBC-94,Shallow,Yes,0.15,6,,1,50.01,36.15,33,3,15.42,3.33,3.02,1186,1.62,43959375,0,61.61,29,1.4
+227,M-652R,6 Storied Germents Building at Chittagong ,27.58,413,UBC-94,Shallow,No,0.15,12,,1,72.22,43,34,5,30.78,3.97,5.98,1462,1.67,43827009,0,72.25,18.59,1.05
+228,M-400A,"3 Storied Mosque Building at Krishnagar, B- Baria ",20.68,413,ASCE 7-10,Shallow,No,0.2,8,5.5,1,56.69,14.05,14,3,10.97,3.66,4.02,194.31,1.08,2771607,0,8.42,6,1.19
+229,M-401A,2 Storied Mosque Building at Sirajgong ,20.68,413,ASCE 7-10,Shallow,Yes,0.15,8,5.5,1,69.51,20.32,11,2,14.33,3.66,4.78,229.11,1,2339350,0,7.32,16.14,1.18
+230,M-402A,"6 Storied Mosque Building at Krishnagar, B- Baria",24.13,413,ASCE 7-10,Deep,No,0.2,8,5.5,1,68.54,41.37,28,6,20.73,3.05,4.78,1169.72,1.94,11585783,8,9.14,18.38,1.07
+231,M-403A,3 Storied Duplex Building at Bhola,24.13,413,ASCE 7-10,Shallow,Yes,0.25,8,5.5,1,69.51,17.22,9,2,7.62,3.05,2.01,161.79,1.74,1703222,0,24.69,20.53,1.26
+232,M-404A,6 Storied Mosque Building at B- Baria,24.13,413,ASCE 7-10,Deep,Yes,0.2,8,5.5,1,56.69,41.25,28,6,20.73,3.05,4.78,1154.49,1.25,11699331,0,4.57,17.05,1.04
+233,M-405A,2 Storied Residential Building at Barisal,27.57,413,ASCE 7-10,Shallow,Yes,0.07,8,5.5,1,69.51,16.92,9,2,8.23,3.66,2.01,156.39,1.38,1610319,0,7.32,22.59,1.02
+234,M-406A,10 Storied Residential Building at Sylhet,27.57,413,ASCE 7-16,Deep,Yes,0.24,8,3,1,58.11,76.08,62,10,33.28,3.26,1.92,4685.46,4.07,3367735,0,23,147,1.07
+235,M-450A,"8 Storied Factory Building at Tongi, Gazipur",24.13,413,UBC-94,Deep,No,0.15,8,,1,59.72,55.24,22,8,29.54,3.65,2,1230.19,1.87,10265075,0,4.38,13.09,1.14
+236,M-451A,"2 Storied Factory Building at Sreepur, Gazipur",22.46,500,ASCE7-05,Deep,Yes,0.2,3.5,,1,66.5,54.4,29,1,9.01,4.26,2,1591.74,1.47,13170489,0,21.3,10.54,1.02
+237,M-452A,"1 Storied Factory Building at Savar, Dhaka",34.48,500,UBC-94,Deep,Yes,0.15,8,,1,58.33,89.91,30,1,34.32,3.04,5.02,2653.24,1.45,10724382,0,2.13,8.57,1.14
+238,M-453A,"2 Storied Factory Building at Savar, Dhaka",17.79,500,UBC-94,Shallow,No,0.15,5,,1,58.33,36.6,27,2,11.7,2.71,4,996.25,1.16,242087,0,5.96,3.32,1.21
+239,M-454A,"6 Storied Factory Building at Bhager Bazer, Gazipur",32.73,413,UBC -94,Shallow,No,0.15,9,,1,59.72,38.83,30,6,27.12,3.65,3,1169.56,1.5,811577,0,27.74,9.91,1.39
+240,M-455A,"1 Storied Utility Building at Bhager Bazer, Gazipur",27.58,413,ASCE7-05,Shallow,No,0.2,5,,1,56.5,12.23,6,2,6.09,3.65,1.43,74.48,1.06,1447739,0,16.06,5.31,1
+241,M-456A,"6 Storied Factory Building at Ashlia, Savar",31.03,413,UBC-94,Shallow,No,0.15,8,,1,58.33,33.5,29,6,26.49,5.79,3,958.1,1.67,10529011,0,22.58,31,3.6
+242,M-457A,"2 Storied Utility Building at Ashlia, Savar",31.03,413,UBC-94,Shallow,No,0.15,8,,1,58.33,11.09,7,2,10.71,3.66,2.39,81.07,1.74,1559395,0,27.1,47.54,1.3
+243,M-458A,"4 Storied Utility Building at Kaliyakoir, Gazipur",21.48,413,UBC-94,Deep,No,0.15,8,,1,59.72,23.87,6,4,14.02,3.18,3.02,152.77,1.86,1842577,0,5.62,28.7,1.12
+244,M-459A,"5 Storied Factory Building at Fatullah, Narayanganj",24.13,413,UBC-94,Deep,No,0.15,8,,1,54.01,59.29,18,5,23.51,5.64,5.03,1087.38,2.42,13250159,0,12.43,29.72,1.05
+245,M-701A,2 Storied Wash block Building at Manikjang ,20.68,500,ASCE 7-10,Shallow,No,0.2,8,5.5,1,65.71,4.39,3,2,7.62,3.05,2.01,15.06,1,361696,0,1.49,0.24,1
+246,M-702A,9 Storied Residencial Building at Bashundhara,24.13,413,ASCE 7-05,Deep,Yes ,0.2,7,5.5,1,58.33,25.19,18,9,32.92,3.05,2.01,454.18,1.61,3966972,0,26.03,87.1,1.22
+247,M-703A,2 Storied Residential Building  at Bhola ,24.13,413,ASCE 7-10,Shallow,Yes,0.12,8,5.5,1,69.5,17.88,16,2,7.62,3.05,2.01,293.23,1.66,2083841,0,4.88,10.58,1.18
+248,M-704A,2 Storied Residential Building at Manikjang ,24.13,413,ASCE 7-10,Shallow,No,0.2,8,5.5,1,65.71,11.89,11,2,7.92,3.66,2.01,131.62,1.58,1809870,0,9.15,11.75,1.15
+249,M-705A,"2 Storied Residential Building at Gorki, Bogura",24.13,413,ASCE 7-10,Shallow,Yes,0.28,8,5.5,1,69.53,17.43,12,2,10.97,3.05,2.01,200.97,2.04,2022074,0,9.6,13.57,1.19
+250,M-706A,2 Storied Residential Building at Bhola ,24.13,413,ASCE 7-10,Shallow,No,0.12,8,5.5,1,69.5,14.33,12,2,7.62,3.05,2.01,174.71,1.32,1711282,0,4.57,11.07,1.12
+251,M-707A,8 Storied Commercial Building at Alamdanga,24.13,413,ASCE 7-10,Deep,No,0.12,8,5.5,1,66.89,27.64,11,7,26.21,3.05,2.01,292.71,1.1,3732710,0,14.63,11.32,1.15
+252,M-709A,"5 Storied Residencial Building at Pallabi, Dhaka ",24.13,413,ASCE 7-05,Deep,Yes,0.2,7,5.5,1,58.33,29.54,14,5,17.68,3.05,2.01,409.13,1.46,2219562,0,51.82,38.65,1.66
+253,M-710A,4 Storied Commercial Building at Bhola ,24.13,413,ASCE 7-10,Deep,Yes,0.12,5,4.5,1,69.5,36.77,35,4,17.25,3.45,4.8,1271.87,2.93,7727446,0,12.25,9.44,1.69
+254,M-711A,9 Storied Residencial Building at Bashundhara,24.13,413,ASCE 7-05,Deep,No,0.2,7,5.5,1,58.33,21.11,8,9,29.87,3.05,2.01,171.41,1.58,3080639,0,17.07,50.88,1.22
+255,M-712A,"9 Storied Residencial Building at Purbachol, Dhaka  ",24.13,413,ASCE 7-05,Deep,Yes,0.2,7,5.5,1,58.33,19.76,12,9,32.92,3.05,2.01,235.93,1.54,2909700,0,30.18,62.09,1.1
+256,M-713A,7 Storied Residential Building at Narayanjang ,24.13,413,ASCE 7-05,Shallow,No,0.2,7,5.5,1,65.71,15.03,11,7,23.78,3.05,2.01,159.62,2.17,1834835,0,14.33,32.3,1.12
+257,M-714A,10 Storied Residential Building at Mirpur-12,27.58,500,ASCE 7-10,Deep,No,0.2,8,5.5,1,65.71,19.41,12,10,35.05,3.05,2.01,239.13,1.26,3065800,0,8.53,39.54,1.09
+258,M-715A,"5 Storied Residential Building at Mirpur-12, Mirpur Cant.",24.13,413,ASCE 7-10,Shallow,No,0.2,8,5.5,1,44.7,19.52,10,5,15.24,3.05,2.87,199.3,1.67,1858061,0,15.85,25.7,1.11
+259,M-716A,"9 Storied Residential Building at Jalshiri, Dhaka",24.13,413,ASCE 7-05,Deep,No,0.2,8,5.5,1,65.71,22.99,21,9,32.92,3.05,2.01,481.18,1.74,4268663,63.2,109.73,52.6,1.14
+260,M-717A,"9 Storied Residential Building at Purbachol, Dhaka",24.13,413,ASCE 7-05,Deep,No,0.2,7,5.5,1,65.71,22.94,14,9,32.31,3.05,2.01,331.02,1.63,3812896,43.8,25.91,52.79,1.07
+261,M-718A,8 Storied Commercial Building at Bhola,24.13,413,ASCE 7-10,Deep,No,0.12,8,5.5,1,69.5,45.4,22,7,26.21,3.05,2.4,980.64,1.18,9410000,0,9.14,25.4,1.16
+262,M-719A,9 Storied Residential Building at Bashundhara,24.13,413,ASCE 7-05,Deep,No,0.2,7,5.5,1,65.71,25.2,18,9,32.92,3.05,2.01,454.36,1.2,3967734,0,16.46,79.1,1.35
+263,M-720A,"9 Storied Residential Building at Jalshiri, Sector 12 ",24.13,413,ASCE 7-05,Deep,No,0.2,7,5.5,1,65.71,20.96,13,9,29.5,3,2,268.29,1.35,4725000,0,123,37.91,1.33
+264,M-721A,6 Storied Factory Building at Gazipur,28.05,413,ASCE 7-16,Deep,No,0.2,8,5.5,1,58.34,25.96,71,6,23.47,3.66,3,1845.5,1.78,9174175,19.1,2.78,13.42,1.24
+265,M-722A,7 Storey Residential Building at Demra ,24.1,413,ASCE 7-05,Shallow,No,0.2,7,5.5,1,65.71,18.39,10,7,23.78,3.05,2.01,188.31,2.22,1803867,0,14.03,43.7,1.33
+266,M-723A,"8 Storied Residential Building at Jalshiri, Dhaka",20.7,413,ASCE 7-05,Deep,No,0.2,7,5.5,1,65.71,22.94,21,8,29.26,3.05,2.01,482.2,1.11,2972897,27.3,26.82,64.69,1.38
+267,M-724A,"10 Storied Residential Building at ECB Chattor, Dhaka",27.6,413,ASCE 7-10,Shallow,Yes,0.2,8,5.5,1,65.71,22.86,22,10,31.09,3.05,2.01,505.89,1.93,5141925,11.1,27.76,80.17,1.19
+268,M-725A,"9 Storied Residential Building at Jalshiri, Purbachol",24.1,413,ASCE 7-05,Deep,No,0.2,7,5.5,1,65.71,20.96,13,9,30.76,4.26,2,268.29,1.56,7200000,10.5,103.94,41.23,1.3
+269,M-726A,4 Storied Residential Building at Madaripur ,27.6,500,ASCE 7-10,Deep,No,0.2,8,5.5,1,68.17,19.38,13,4,13.72,3.05,2.01,245.74,1.27,2725156,0,12.19,17.89,1.19
+270,M-750A,"6 Storied Residential Building at Birulia, Dhaka",24.13,413,ASCE 7-10,Shallow, No,0.2,8,,1,65.72,14.02,8,6,18.29,3.05,2.01,110.39,1.88,2043867,0,9.14,36.48,1.13
+271,M-751A,"7Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-10,Shallow, No,0.2,8,,1,65.72,13.72,8,7,24.69,3.05,1.05,107.28,2.74,2508382,0,6.1,36.91,1.21
+272,M-752A,"7 Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-10,Shallow, No,0.2,8,,1,65.72,14.02,10,7,24.38,3.05,1.05,142.45,2.85,2596124,0,9.14,53.19,1.24
+273,M-753A,"5 Storied Residential Building at Mirpur, Dhaka",24.13,413,ASCE 7-10,Shallow, No,0.2,8,5.5,1,44.7,19.52,10,5,15.24,3.05,1.05,199.3,1.53,1858061,0,18.29,25.71,1.11
+274,M-754A,"7 Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-10,Shallow, No,0.2,8,,1,65.72,14.02,10,7,23.77,3.05,2.01,137.85,2.73,2198705,0,9.14,43.77,1.24
+275,M-755A,"7 Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-10,Shallow, No,0.2,8,,1,65.72,12.83,8,7,23.77,3.05,2.01,101.64,1.37,2570317,0,15.24,58.55,1.27
+276,M-756A,"7 Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-10,Shallow, No,0.2,8,,1,65.72,12.78,10,7,24.38,3.05,1.05,125.91,1.16,2738059,0,9.14,54.74,1.13
+277,M-757A,5 Storied Residential Building at Narayangang,24.13,413,ASCE 7-10,Shallow, No,0.2,8,,1,65.72,12.6,9,5,19.81,3.05,2.01,114.54,1.85,2806446,0,12.19,36.41,1.19
+278,M-758A,"3 Storied Residential Building at Khagrachari, Chittagong",24.13,413,ASCE 7-10,Shallow, Yes,0.28,8,,1,57.22,17.56,12,4,6.71,3.05,1.19,217.53,1,3254071,0,9.14,17.94,1.55
+279,M-759A,"8 Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-10,Shallow, No,0.2,8,,1,65.72,17.12,9,8,27.43,3.05,1.19,157.83,1,1958706,0,9.14,45.71,1.17
+280,M-760A,6 Storied Residential Building at Chittagong,24.13,413,ASCE 7-10,Shallow, No,0.28,8,,1,80,19.33,14,6,21.03,3.35,1.05,277.43,1.61,3747089,0,6.71,43.52,1.15
+281,M-761A,3 Storied Residential Building at Bagerhat,24.13,345,ASCE 7-05,Shallow, Yes,0.12,8,,1,37.99,7.42,5,3,3.05,3.05,1,34.66,2.22,2415479,0,9.14,7.13,1.16
+282,M-762A,"7 Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-10,Shallow, No,0.2,8,,1,65.72,18.43,6,7,23.16,3.05,2.01,103.53,1.12,2105802,0,12.19,68.41,1.72
+283,M-763A,"2 Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-05,Shallow,Yes,0.2,7,,1,65.72,18.47,15,3,11.28,3.35,4.79,276.73,1,1765158,0,23.45,13.03,1.11
+284,M-764A,7 Storied Residential Building at Tangile,24.13,413,ASCE 7-05,Deep, No,0.28,7,,1,65.72,11.27,10,7,23.77,3.05,1.05,114.95,2.33,2376769,0,9.14,51.28,1.17
+285,M-765A,"7 Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-10,Shallow, No,0.2,7,,1,65.72,11.27,10,7,23.77,3.05,1.05,114.95,2.33,2717414,0,9.2,51.28,1.33
+286,M-766A,2 Storied Residential Building at Tangile,24.13,413,ASCE 7-10,Shallow,Yes,0.28,8,,1,69.51,22.63,16,2,7.62,3.05,1.05,361.76,1,1405158,0,9.45,18.75,1.94
+287,M-767A,"5 Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-05,Shallow,Yes,0.2,7,,1,65.72,24.34,9,9,17.37,3.05,1.05,210.96,1,1331610,20,6.1,28.98,1.66
+288,M-768A,"2 Storied Residential Building at Tangile, Dhaka",24.13,413,ASCE 7-10,Shallow,Yes,0.28,8,,1,69.51,11.28,11,2,7.62,3.05,1.05,127.25,1,932901,0,9.14,15.52,1.26
+289,M-769A,"7 Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-10,Shallow,Yes,0.2,8,,1,65.72,8.41,8,7,23.77,3.05,1.05,67.23,1.29,7122586,9.1,9.14,44.6,1.06
+290,M-780A,7 Storied Residential Building at Chittagong ,24.13,413,UBC 94,Deep,No,0.15,5,,1,72.22,17.88,12,7,23.16,3.05,2.02,217.24,2.44,2531250,100,7.28,75.31,1.08
+291,M-781A,"8 Storied Residential Building at Mirpur DOHS, Dhaka",20.66,413,UBC 94,Shallow,No,0.15,5,,1,53.64,15.75,11,8,25.91,3.05,2.02,169,1.93,2347500,16.7,8.08,50.81,1.12
+292,M-782A,"8 Storied Residential Building at Kakrail, Dhaka ",24.13,413,ASCE 7-10,Deep,Yes,0.2,8,,1,65.7,21.23,15,8,28.65,3.35,2.02,268,3.24,4812000,0,5.29,43.1,1.06
+293,M-783A,"8 Storied Residential Building at Mirpur 12, Dhaka ",24.13,413,UBC 94,Deep,No,0.15,8,,1,58.33,16.76,11,8,25.6,3.05,2.02,184.02,2.08,3643750,0,6.1,33.47,1.16
+294,M-784A,15 Storied Commercial Building at Kumilla,20.66,413,ASCE 7-10,Deep,No,0.2,8,,1,55.02,47.96,18,15,45.72,3.05,2.02,843.62,3.78,8587368,18.2,18.59,110.91,1.38
+295,M-785A,"8 Storied Residential Building at Mirpur DOHS, Dhaka",27.58,413,UBC 94,Deep,No,0.15,8,,1,55.76,10.84,36,8,26.52,3.05,2.02,385.69,1.82,2632500,15,7.92,39.38,1.23
+296,M-786A,"9 Storied Commercial Building at Jolshiri, Purbachol",24.13,413,ASCE 7-10,Deep,No,0.2,7,,1,65.7,18.33,12,9,31.09,4.96,2.02,225.83,1.76,4194000,0,10.55,41.52,1.11
+297,M-787A,"8 Storied Residential Building at Sagufta, Pallabi",25,413,UBC 94,Shallow,No,0.15,8,,1,58.33,32.31,16,8,26.44,3.05,2.02,505.65,2.23,8970000,13.6,8.53,39.53,1.19
+298,M-788A,"10 Storied Residential Building at Nabinagor, Savar",27.58,413,ASCE 7-16,Deep,No,0.2,8,,1,58.33,23.19,19,10,33.98,3.5,2.02,435.28,3.98,3773172,5.9,6.54,37.57,1.07
+299,M-789A,"10 Storied Residential Building at Kazipara, Dhaka",24.82,413,ASCE 7-5,Deep,No,0.15,8,,1,65.7,13.06,12,10,31.69,3.05,2.02,159.2,2.54,3850000,0,9.45,46.1,1.02
+300,M-790A,"17 Storied Commercial Building at Narayanganj, Dhaka",20.66,413,ASCE 7-10,Deep,No,0.2,8,,1,57.12,49.95,18,17,51.81,3.05,2.02,878.62,3.78,8498369,22.7,22.77,137.74,1.25
+301,M-791A,"8 Storied Residential Building at Sagufta, Dhaka",27.58,413,UBC 94,Deep,No,0.15,8,,1,58.33,15.93,11,8,25.68,3.66,2.02,173.16,2.96,2342750,0,5.09,41.25,1.05
+302,M-801A,"1 Storied Substation Building at Kuril, Dhaka",24.13,413,ASCE 7-10,Shallow,No,0.2,8,5.5,1,65.7,23.82,4,1,3,3,4.79,101.58,2.42,1478750,0,2.77,0.18,1.05
+303,M-802A,4 Storied Chemical Factory Building at Gagipur,20.68,413,ASCE 7-10,Shallow,Yes,0.2,8,5.5,1,65.7,57.23,22,4,16.77,3.05,4,1268.38,1.88,1337515,0,62.19,2.27,1.8
+304,M-803A,"8 Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-10,Shallow,Yes,0.2,8,5.5,1,65.7,14.15,13,8,26.52,3.05,1.92,176.81,1.76,1868700,0,60.04,50.03,1.95
+305,M-804A,"7 Storied Residential Building at Bashumdhara, Dhaka",24.13,413,ASCE 7-10,Deep,No,0.2,8,5.5,1,65.7,12.88,10,7,22.25,3.5,2.02,126.87,1.62,3643284,0,23.45,42.31,1.14
+306,M-805A,3 Storied Residential Building at Bhola ,20.68,413,ASCE 7-10,Shallow,Yes,0.2,8,,1,69.5,17.29,14,3,13.71,3.35,2.02,245,1.78,1845274,0,21.89,13.64,1.04
+307,M-806A,"7 Storied Residential Building at Uttara, Dhaka",31,413,ASCE 7-05,Deep,Yes,0.28,7,5.5,1,80,24.9,9,8,27.43,3.05,2,212.49,1.95,5220000,0,11.28,52.89,1.22
+308,M-807A,1 Storied Utility Building at Gagipur,20.68,413,ASCE 7-10,Deep,No,0.12,8,,1,65.7,20,16,1,6.2,3.05,5,328,1.53,3870000,0,2.33,1.07,1.04
+309,M-808A,"7 Storied Residential Building at Savar, Dhaka",24.13,413,ASCE 7-10,Shallow,No,0.2,8,,1,65.7,15.69,8,7,22.61,3.05,2.02,124.26,2.48,2684256,0,28.8,42.61,1.17
+310,M-809A,"4 Storied Office Building at Bhola, Barisal",24.13,413,ASCE 7-10,Shallow,No,0.2,8,,1,69.51,30.18,15,4,15.54,3.66,2.49,451.49,2.55,3713502,0,17.64,29.07,1.19
+311,M-810A,1 Storied Utility Boiler Building at Gagipur,20.66,413,ASCE 7-10,Shallow,No,0.2,8,,1,58.33,18.99,15,1,6.1,4.55,3,285.8,1.77,4230000,0,41.95,5.13,1.09
+312,M-811A,"8 Storied Factory Building at Gazipur, Dhaka",15.17,276,UBC 94,Deep,Yes,0.15,8,,1,58.33,57.97,19,8,23.16,3.35,3,928,2.46,7254496,91.3,33.06,88.52,1.36
+313,M-812A,"7 Storied Residential Building at Ibrahimpurl, Kafrul",20.68,413,ASCE 7-10,Deep,Yes,0.2,8,,1,65.7,13.36,11,7,22.25,3.35,2.02,128.32,2.08,2996400,0,16.28,28.72,1.18
+314,M-813A,"7 Storied Residential Building at Bashumdhara, Dhaka",24.13,413,ASCE 7-10,Deep,No,0.2,8,,1,65.7,14.42,10,7,23.17,3.05,2.02,138.43,1.78,2661000,0,45.11,33.75,1.12
+315,M-850A,"3 Storied School Building at Nidonpur, Sylhet",24.82,413,ASCE 7-05,Deep,No,0.36,5,4.5,1,61.48,44,13,3,13,3.9,2.01,585.2,1.26,5617325,0,12.14,20.45,1.12
+316,M-851A,"4 Storied School Building at Ramu, Chittagong",24.82,413,ASCE 7-05,Deep,Yes,0.28,8,5.5,1.3,80,18.45,14,4,15.45,3.9,2.01,260.15,1.52,4400000,0,15.15,14.7,1.27
+317,M-852A,"4 Storied School Building at jaziti, Kushtia",24.82,413,ASCE 7-05,Deep,Yes,0.2,5,4.5,1.3,50.66,41.5,10,4,16.35,4.05,2.01,402.55,1.48,6650000,0,21.46,20.84,1.19
+318,M-853A,5 Storied School Building at Rangpur,24.82,413,ASCE 7-05,Deep,No,0.28,5,4.5,1.3,61.48,41.4,10,5,19.65,4.05,2.01,409.86,2.54,6912423,0,19.85,33.07,1.2
+319,M-854A,"4 Storied School Building at Kaligong, Sylhet",24.82,413,ASCE 7-05,Deep,Yes,0.36,5,4.5,1,61.48,44,13,4,16.3,3.9,2.01,585.2,2.11,5617325,0,28.88,33.23,1.1
+320,M-855A,6 Storied School Building at Chittagong,24.82,413,ASCE 7-05,Deep,Yes,0.28,6.5,5,1.3,80,34.03,15,6,22.05,4.05,2.01,508.67,3.19,7280000,0,25.31,29.81,1.19
+321,M-856A,"6 Storied School Building at Board Bazar, Gazipur",24.82,413,ASCE 7-05,Deep,Yes,0.28,5,4.5,1,65.79,21,14,6,21.7,4.2,2.01,289.8,1.7,4620000,0,25.28,22.98,1.16
+322,M-857A,"8 Storied School Building at Ruppur, Narayangang",24.82,413,ASCE 7-05,Deep,Yes,0.2,6,5,1.3,65.71,31,17,8,28.95,3.9,2.01,525.45,2.79,6560000,0,17.61,54.39,1.18
+323,M-858A,"10 Storied School Building at Karanigong, Dhaka",24.82,413,ASCE 7-05,Shallow,Yes,0.2,8,5.5,1.3,65.71,74.25,17,10,35.7,4.2,1.92,1264.11,1.44,1421250,0,3.52,64.16,1.62
+324,M-859A,"6 Storied School Building at Razashon, Savar",24.82,413,ASCE 7-05,Deep,Yes,0.2,8,5.5,1.3,65.71,26.25,13,6,22.9,3.9,2.01,338.63,2.23,5360000,0,10.69,25.03,1.29
+325,M-860A,7 Storied School Building at Dhaka,24.82,413,ASCE 7-05,Deep,Yes,0.2,6.5,5,1.3,65.71,31,17,6,26.65,3.9,2.01,525.45,1.75,6560000,0,14.82,39.77,1.2
+326,M-861A,5 Storied Madrasa Building At Cumilla,24.13,500,ASCE7-05,Shallow,No,0.2,5,,1,61.24,62.5,36,5,19.21,3.2,4.78,2260.21,2.21,109728,0,16,19.44,1.02
+327,M-862A,7 storied Residential Building at Gazipur,24.13,413,ASCE7-05,Shallow,No,0.2,6.5,,1,66.6,14.5,10,8,28.65,3.05,2.01,146.95,2.55,1513434,0,14.03,45.82,1.14
+328,M-863A,"3 Storied Mosque Building at Hathazari, Chittagong",24.13,413,ASCE7-05,Shallow,No,0.28,8,,1,80,37.61,28,3,15.9,3.6,2.44,1050.45,2.44,3261250,0,15.84,32.23,1.11
+329,M-864A,"8 Storied Residential Building at Purbachol, Dhaka",31.03,500,ASCE7-05,Shallow,No,0.2,6.5,,1,65.71,16.94,16,8,29.71,3.5,2.01,267.99,2.68,3980740,0,12.25,51.44,1.12
+330,M-865A,"5 Storied Residential Building at Baunia, Dhaka ",20.68,413,UBC-94,Shallow,No,0.15,6,,1,65.71,15.64,9,5,20.11,3.05,1.44,132.94,1.29,395072,0,10.68,4.15,1.06
+331,M-866A,4 Storied Factory Building at Gazipur,24.13,413,UBC-94,Shallow,Yes,0.2,8,,1,66.6,56.87,31,4,16.76,3.65,3,1766.38,1.75,11890299,0,15.33,14.17,1.73
+332,M-867A,"10 Storied Factory Building at Salna, Gazipur",24.13,413,UBC-94,Deep,No,0.15,6,,1,66.6,40.23,38,10,34.74,3.35,5,1527.94,1.82,31490260,0,4.69,18.68,1.04
+333,M-868A,"4 Storied Commercial Building at Gazipur, Dhaka",24.13,413,UBC-94,Shallow,Yes,0.2,8,,1,66.6,56.87,31,4,16.76,3.65,3,1766.38,1.75,11890299,0,15.33,4.15,1.73
+334,M-869A,4 Storied Factory Building at Dhaka,24.13,413,UBC-94,Deep,No,0.15,6,,1,66.66,40.23,38,4,15.24,3.35,5,1527.94,1.75,11890299,0,2.67,2.44,1.04
+335,M-870A,"9 Storied Residential Building at Jolshiri, Purbachol",27.58,413,ASCE7-05,Deep,No,0.2,8,,1,66.66,17.33,13,8,33.23,2.43,2,219.05,1,5667085,0,4.37,20.43,1.09
+336,M-871A,7 Storied Residential Building at Purbachol. Dhaka,24.13,413,ASCE7-05,Deep,No,0.2,8,,1,65.71,17.14,12,8,28.34,3.05,1.99,212.88,1,4548378,0,12,28.23,1.05
+337,M-872A,"11 Storied Residential Building at Jolshiri, Dhaka",27.58,413,ASCE7-05,Deep,No,0.2,7,,1,65.71,18.23,12,9,36.11,3.35,2,224.23,2.55,3645652,0,74.37,38.43,2.58
+338,M-873A,"5 Storied Residential Building at Bashundhara, Dhaka",24.13,413,ASCE7-05,Deep,Yes,0.2,8,,1,65.71,31.8,14,5,18.49,2.9,2,431.84,1.45,8854821,0,8.56,54.47,1.21
+339,M-874A,"4 Storied Madrasha Building at Board Bazar , Dhaka",24.13,500,ASCE 7-05,Deep,No,0.2,8,5.5,1,59.71,30.32,17,4,16,3.81,2.87,528.17,0.23,5305796,0,12.57,13.61,1.08
+340,M-875A,5 Storied Mosque Building at Bhola,27.58,500,ASCE 7-05,Deep,No,0.12,6.5,5,1,63.93,23.95,24,5,18.28,5.63,4.79,569.29,0.17,6387084,0,18.02,30.53,1.27
+341,M-876A,6 Storied Hospital Building at Tangail,27.58,413,ASCE 7-05,Deep,No,0.2,8,5.5,1.3,52.75,35.33,32,8,28.04,3.65,2.87,1119.61,1.05,1289786,0,17.89,39.29,1.16
+342,M-877A,"14 Storied Commercial Building at Uttara, Dhaka",27.58,500,ASCE 7-05,Deep,No,0.2,6.5,5,1,65.71,26.81,26,14,56,4.8,2.87,689.29,0.52,4453208,0,15.24,174.52,1.32
+343,M-878A,"8 Storied Residential Building at Purbachol, Dhaka",34.47,500,ASCE 7-05,Deep,No,0.2,6.5,5,1,65.71,15.77,11,8,26.36,4.11,2.01,172.21,0.49,2593543,0,20.55,53.86,1.13
+344,M-879A,"10 Storied Residential Building at Banani, Dhaka",31.03,500,ASCE 7-05,Deep,No,0.2,8,5.5,1,65.71,15.24,12,10,31.7,3.35,2.01,177.24,1.37,3203219,0,13.4,84.66,1.34
+345,M-880A,"10 Storied Reidential Building at Badda, Dhaka",31.03,500,ASCE 7-05,Deep,No,0.2,8,5.5,1,65.71,15.59,14,10,32.91,3.96,2.01,213.74,1.76,3590315,0,11.88,70.37,1.25
+346,M-901B,6 Storied Residential Building at Chittagong,24.13,413,ASCE 7-10,Shallow,No,0.28,8,5.5,1,79.98,32.23,18,6,21.03,3.35,2.01,573.69,2.12,6015472,22.2,16.75,37.8,1.21
+347,M-902B,7 Storied Residential Building at Sylhet,27.58,413,ASCE 7-16,Deep,No,0.36,5,5.5,1,56.77,20.06,14,7,21.94,3.35,2.39,281.24,1.25,12221663,0,3.35,29.32,1.13
+348,M-903B,"10 Storied Residential Building at Prbachol, Dhaka",24.13,500,ASCE 7-05,Deep,No,0.2,6.5,5,1,65.55,15.87,14,10,30.78,3.05,2.16,222.5,1.34,2980639,0,64.66,64.93,1.16
+349,M-904B,"7 Storied Residential Building at Kafrul, Dhaka",20.68,413,ASCE 7-10,Deep,No,0.2,8,5.5,1,65.71,11.34,11,7,23.77,3.05,2.01,123.04,0,3089026,100,72.54,40.3,1.12
+350,M-905B,15 Storied Residential Building at Dhaka,27.58,500,ASCE 7-05,Shallow,No,0.2,7,5.5,1,65.71,25,18,15,48,3,2,450,0.08,7812500,0,15,81.95,1.01
+351,M-900A,"8 Storied Residential Building at Pallabi, Dhaka",24.14,500,ASCE7-05,Deep,Yes,0.2,8,,1,65.71,17.5,14,8,31.49,3.35,2,252.53,1.22,5904662,0,15.62,29.56,1.23
+352,M-901A,"7 Storied Residential Building at Mirpur 12, Dhaka",24.13,500,ASCE7-05,Deep,No,0.2,8,,1,65.71,13.2,10,7,28.49,3.35,2,130.02,1.17,4211955,0,15.62,34.56,1.1
+353,M-902A,"9 Storied Residential Building at Savar DOHS, Dhaka",24.13,500,ASCE7-05,Deep,Yes,0.2,8,,1,65.71,14.83,11,9,34.89,3.35,2,163.13,1.31,3956775,0,14.21,40.44,1.23
+354,M-903A,"7 Storied Residential Building at Bonani, Dhaka",24.13,500,ASCE7-05,Deep,No,0.2,8,,1,65.71,13.58,10,7,28.66,3.66,2,134.44,1,3177692,0,12.81,40.13,1.1
+355,M-904A,"10 Storied Residential Building at Savar DOHS, Dhaka",24.13,500,ASCE7-05,Deep,Yes,0.2,8,,1,65.71,17.9,12,10,37.79,3.5,2,211.76,1.63,4940046,0,15.69,46.82,1.23
+356,M-905A,"10 Storied Residential Building at Savar, Dhaka",27.59,500,ASCE7-05,Deep,Yes,0.2,8,,1,65.71,16.19,11,10,37.94,3.65,2,182.95,1.66,5300853,0,16.43,78.29,1.14
+357,M-906A,"7 Storied Residential Building at Gulshan, Dhaka",24.13,500,ASCE7-05,Deep,No,0.2,8,,1,65.71,14.7,9,7,24.93,3.65,2,127.6,1.42,3948227,0,13.14,36.29,1.25
+358,M-907A,"10 Storied Residential Building at Diabari, Uttara",24.13,500,ASCE7-05,Deep,NO,0.2,8,,1,65.71,18.15,12,10,38.1,3.65,2,215.62,1.41,4830928,0,17.52,62.59,1.13
+359,M-910A,"9 Storied Residential Building at Mirpur 11, Dhaka",24.13,500,ASCE7-05,Deep,No,0.2,8,,1,65.71,17.09,11,9,35,3.65,2,191.41,1.93,4533138,0,71.72,55.8,1.07
+360,M-911A,"10 Storied Residential Building at Dhanmondi, Dhaka",24.13,500,ASCE7-05,Deep,Yes,0.2,8,,1,65.71,13.21,11,10,37.94,3.65,2,144.91,1.24,4596765,0,14.24,63.1,1.14
+361,M-912A,"10 Storied Residential Building at Mohakhali DOHS, Dhaka",24.13,500,ASCE7-05,Deep,YEs,0.2,8,,1,65.71,19.7,11,10,38.1,3.66,2,220.05,1.71,5585308,0,15.33,73.56,1.13
+362,M-913A,"9 Storied Residential Building at Mohakhali DOHS, Dhaka",24.13,500,ASCE7-05,Deep,Yes,0.2,8,,1,65.71,12.72,11,9,34.89,3.66,2,140.56,1.41,4300575,0,10.3,52.77,1
+363,M-914A,"10 Storied Residential Building at Mirpur, Dhaka",24.13,500,ASCE7-05,Deep,Yes,0.2,8,,1,65.71,15.69,12,9,37.49,3.05,2,187.18,2.25,4472482,0,18.14,63.33,1.15
+364,M-915A,"9 Storied Residential Building at Bashundhara, Dhaka",24.13,500,ASCE7-05,Deep,Yes,0.2,8,,1,65.71,12.66,11,9,34.29,3.05,2,141.16,1.44,4625797,0,14.63,42.43,1.13
+365,M-916A,"10 Storied Residential Building at Baridhara DOHS, Dhaka",24.13,500,ASCE7-05,Deep,Yes,0.2,8,,1,65.71,17.35,12,10,37.94,3.65,2,206.29,1.28,5323484,0,17.65,61.75,1.18
+366,M-917A,"9 Storied Residential Building at Bashundhara, Dhaka",24.13,500,ASCE7-05,Deep,Yes,0.2,8,,1,65.71,10.87,11,10,34.89,3.66,2,114.24,1.4,3550996,0,16.18,87.16,1.45
+367,M-920A,"17 Storied Commercial Residential Building, Khulna",27.58,345,ASCE 7-05,Deep, No,0.12,6.5,5,1,73.31,49.3,31,17,58.67,2.44,3.8,1505.21,1.15,29333509,0,9.75,181.57,1.94
+368,M-921A,"10 Storied Commercial Residential Building, Dhanmondi, Dhaka",27.58,345,ASCE 7-05,Deep,Yes,0.12,8,5,1,65.71,18.01,15,10,28.96,3.05,3.8,273.08,3.87,3425800,0,15.24,135.69,1.17
+369,M-922A,"10 Storied Commercial Residential Building, Malibagh, Dhaka",24.13,345,ASCE 7-05,Shallow,Yes,0.12,8,4.5,1,65.71,21.06,21,10,32,3.05,2,443.38,1.24,5767730,0,18.29,39.92,1.22
+370,M-920A,"18 Storied Commercial Residential Building, Khulna",25,500,ASCE 7-05,Shallow,Yes,0.12,8,4.5,1,65.71,22.67,18,18,64.8,3.05,2,414.18,2.28,5767730,0,29.26,98.62,1.17
+371,M-923A,"7 Storied Residential Building, Bashundhara, Dhaka",31.03,345,ASCE 7-05,Deep,Yes,0.12,6.5,4.5,1,65.71,13.46,10,7,22.86,3.05,2,132.33,1.24,5845150,0,12.19,37.41,1.17
+372,M-924A,"9 Storied Commercial Market Building, Mirpur, Dhaka ",24.13,345,ASCE 7-05,Deep,Yes,0.12,8,5.5,1,61.49,19.41,14,9,31.7,3.35,3.8,270.11,2.05,7073321,0,10.06,67.59,3.19
+373,M-925A,"7 Storied Residential Building, Kazi Para, Dhaka ",24.13,345,ASCE 7-05,Deep,Yes,0.12,5,4.5,1,65.71,16.15,13,7,24.38,4.57,2,201.88,2.42,2854833,0,27.43,58.79,1.36
+374,M-926A,"7 Storied Residential Building, Tangile, Dhaka ",27.58,345,ASCE 7-05,Deep,No,0.28,8,5,1,58.11,17.4,7,7,24.99,3.05,2,129.93,1.41,1432255,0,6.1,38.36,1.13
+375,M-927A,"13 Storied Residential Building, Purbachol, Dhaka ",27.57,345,ASCE 7-05,Deep,No,0.12,8,5.5,1,60.89,17.91,12,13,44.46,3.05,2,221.96,1.87,2419350,0,27.43,98.21,1.07
+376,M-928A,"10 Storied Residential Building, Mirpur, Dhaka ",24.13,345,ASCE 7-05,Deep,Yes,0.12,8,4.5,1,65.71,46.25,25,10,34.14,3.05,2,1167.79,2.23,14370939,0,9.14,7.69,1.22
+377,M-929A,"9 Storied Residential Building, Dhanmondi, Dhaka ",27.57,345,ASCE 7-05,Deep,Yes,0.12,5,4.5,1,65.71,17.88,12,9,29.41,3.65,2,223.01,1.29,13306425,0,18.25,67.01,1.16
+378,M-930A,"8 Storied Residential Building, Bashundhara, Dhaka ",27.57,345,ASCE 7-05,Deep,Yes,0.12,6.5,2.5,1,65.71,20.7,18,8,25.91,3.05,2,368.59,2.54,3909670,0,15.25,58.25,1.06
+379,M-931A,"10 Storied Residential Building, Bashundhara, Dhaka ",24.13,345,ASCE 7-05,Deep,No,0.12,8,4.5,1,65.71,33.88,16,10,32,3.05,2,368.59,2.26,3909670,0,12.2,47.47,1.19
+380,M-932A,"10 Storied Residential Building at Gulshan, Dhaka ",27.58,345,ASCE 7-05,Shallow,No,0.12,8,5,1,65.71,27,14,10,32,3.05,2,555.98,1.26,3870960,0,3.05,31.82,1.2
+381,M-933A,"8 Storied Residential Building at Mohakhali DOHS, Dhaka ",24.13,345,ASCE 7-05,Deep,No,0.12,8,4.5,1,65.71,18.62,14,8,25.91,3.05,2,388.85,2.79,2988381,5.6,9.15,78.07,1.14
+382,M-934A,"6 Storied Residential Building at Alamdanga, Kustiya",24.13,345,ASCE 7-05,Deep,No,0.2,6,4.5,1,50.51,13.74,10,6,19.81,3.05,2,256.79,1.15,1765158,0,9.15,18.34,1.08
+383,M-935A,"15 Storied Commercial Building at Jashor, Khulna",27.57,345,ASCE 7-05,Deep,No,0.2,6.5,5,1,73.31,49.3,31,15,53.64,3.66,3.8,138.22,1.33,24152958,0,14.63,117.84,1.18
+384,M-943A,"9 Storied Residential Building at Joshiri, Dhaka",31.03,500,ASCE 7-05,Deep,No,0.2,6.5,5,1,65.71,16.05,12,9,30.02,4.88,2.01,199.82,2.98,4811602,0,17.08,52.67,1.19
+385,M-944A,"8 Storied Residential Building at Purbachal City, Dhaka",27.58,500,ASCE 7-05,Deep,No,0.2,6.5,5,1,65.71,13.79,8,8,22.1,3.05,2.01,105.36,2.7,2014220,0,10.48,29.11,1.21
+386,M-946A,"6 Storied Factory Building at Ashulia, Savar",21.59,413,ASCE 7-16,Shallow,Yes,0.2,8,5.5,1,65.71,50.19,24,6,23.16,3.81,3.02,1223.63,1.84,14640773,0,2.82,31.86,1.17
+387,M-947A,"10 Storied Residential Building at Bashundhara, Dhaka",31.03,413,ASCE 7-05,Deep,Yes,0.2,6.5,5,1,65.71,28.45,19,10,33.68,3.51,2.01,544.82,2.26,5144135,0,16.73,38.62,1.07
+388,M-948A,"9 Storied Residential Building at Jolshiri RA, Dhaka",31.03,500,ASCE 7-05,Deep,No,0.2,6.5,5,1,65.71,19.59,12,9,30.02,4.88,2.01,244.68,3.16,3390961,0,18.13,55.88,1.13
+389,M-949A,"4 Storied Factory Building at Gazipur, Dhaka",31.03,413,ASCE 7-05,Deep,Yes,0.28,6.5,5,1,66.61,39.4,15,4,16.92,4.42,5.03,590.38,2.47,4306189,0,24.97,24.08,1.08
+390,M-950A,"12 Storied Residential Building at Baridhara, Dhaka",34.47,500,ASCE 7-05,Deep,Yes,0.2,7,5.5,1,65.71,25.21,18,12,32.92,3.66,2.01,456.55,1.07,3655628,0,7.54,27.79,2.02
+391,M-961A,"10 Storied Residential Building at Savar DOHS, Savar",27.58,413,ASCE 7-05,Deep,No,0.2,8,5.5,1,66.16,18.08,12,10,32.31,3.35,1.92,225.1,1,4887087,0,10.54,30.89,1.1
+392,M-962A,"9 Storied Residential Building at jolshiri, Dhaka",24.13,413,ASCE 7-05,Deep,No,0.2,8,5.5,1,65.71,17.15,12,9,30.78,4.86,1.92,213,2.53,3326511,0,47.39,60.28,1.37
+393,M-963A,6 Storied Residential Building at Khagrachori,27.58,500,ASCE 7-16,Deep,No,0.28,5,5.5,1,56.77,20.07,13,6,24.69,3.35,1.92,251.23,1.89,2880969,0,11.91,28.16,1.05
+394,M-964A,"4 Storied Office Building at Tongipara, Gopalganj",20.68,500,ASCE 7-05,Deep,No,0.2,5,4.5,1,74.5,19.61,13,4,12.95,3.81,2.01,259.44,1.82,2726395,0,27.19,40.88,1.47
+395,M-965A,"8 Storied Residential Building at Baridhara DOHS, Dhaka",24.13,413,ASCE 7-16,Deep,No,0.2,5,4.5,1,58.33,16.89,12,8,28.35,3.05,1.92,210.62,2.87,2874792,0,6.41,77.41,1.13
+396,M-966A,14 Storied Residential Building at Dinajpur ,27.58,413,ASCE 7-05,Deep,No,0.2,8,5.5,1,41.57,26.25,15,14,40.23,3.96,1.92,398.21,1.12,14903958,0,9.5,17.06,1.1
+397,M-967A,"2 Storied Residential Duplex Building at Faridpur, Khulna",17.24,413,ASCE 7-16,Deep,No,0.12,5,5.5,1,46.67,15.35,8,2,7.8,3.05,3.02,124.8,1,1429116,0,6.83,5.38,1.22
+398,M-968A,4 Storied Residential Building at Gazipur,24.13,500,ASCE 7-16,Deep,Yes,0.28,8,5.5,1,59.72,15.9,13,4,16.54,3.35,1.92,212.9,1,2447930,0,3.28,19.92,1.16
+399,M-969A,"02 Storied Residential Building at Kamalganj, Sylhet",17.24,413,ASCE 7-16,Deep,No,0.36,12,5.5,1,46.67,16.41,5,2,8.38,3.05,1.92,75.81,1.52,976305,0,5.42,22.93,1.52
+400,M-970A,6 Storied Residential Building at Kishoregonj,27.58,500,ASCE 7-16,Deep,No,0.36,5,5.5,1,56.77,20.07,13,6,24.69,3.54,1.92,251.23,1.74,2600330,0,10.39,14.78,1.06
+401,M-971A,5 Storied Public Library Building at  Nilphamary,20.68,413,ASCE 7-05,Deep,Yes,0.2,5,4.5,1,44.69,29.34,15,5,17.98,3.05,4.79,452.42,2.35,3870960,0,73.2,34.55,1.28
+402,M-972A,"2 Storied Residential Duplex Building at at Faridpur, Khulna",20.68,413,ASCE 7-16,Deep,Yes,0.12,8,5.5,1,46.67,13.69,10,2,10.82,3.05,1.92,134.16,1,1557635,0,3.78,7.83,1.14
+403,M-973A,"4 Storied  Residential Building at Sreemangal, Sylhet",17.24,413,ASCE 7-16,Deep,Yes,0.36,12,5.5,1,46.67,15.44,14,4,12.19,3.05,1.92,216.93,3.78,2207285,0,4.58,14.76,1.11
+404,M-974A,"2 Storied Residential Building at Kamalgonj, Sylhet",19.31,413,ASCE 7-16,Deep,Yes,0.36,12,5.5,1,46.67,15.19,9,2,6.1,3.05,1.92,129.27,1,1262423,0,2.14,5.25,1.17
+405,M-975A,"2 Storie Duplex Building at Tilokpur, Sylhet ",19.31,413,ASCE 7-16,Deep,Yes,0.36,12,5.5,1,46.67,13.56,10,2,8.38,3.05,1.92,129.9,1,1212520,0,2.77,10.14,1.28
+406,M-951A,"6 Storied Garments Factory Building at Gazipur, Dhaka",27.59,500,ASCE 7-10,Deep,No,0.2,8,5.5,1,65.71,71.09,26,6,21.47,1.52,3.02,1845.52,2.3,12263201,28,61.44,67.68,1.9
+407,M-952A,"11 Storied Residential Building at Bashundhara RA, Dhaka",22.75,500,ASCE 7-16,Deep,No,0.2,8,5.5,1,58.56,20.47,18,11,36.88,2.74,2.01,360.87,1,3880637,0,20.73,25.26,1.06
+408,M-953A,"11 Storied Residential Building at Mirpur 13, Dhaka",22.07,500,ASCE 7-16,Deep,No,0.2,8,5.5,1,58.12,35.36,14,11,37.95,2.9,2.01,477.77,1.08,6467729,0,25.6,40.22,1.48
+409,M-954A,"6 Storied Residential Building at Manda, Asulia, Savar",27.58,500,ASCE 7-16,Deep,No,0.2,8,5.5,1,59.01,13.46,9,6,20.12,1.83,2.01,120.36,1.96,2473543,0,2.94,26.9,1.23
+410,M-955A,"7 Storied Residential Building at Ashulia, Savar",24.14,500,ASCE 7-16,Deep,No,0.2,8,5.5,1,58.56,15.49,8,7,23.47,2.13,2.01,126.72,1.88,3719074,0,2.06,26.49,1.26
+411,M-956A,"8 Storied Residential Building at Manda, Savar",24.14,500,ASCE 7-16,Shallow,No,0.2,8,5.5,1,58.56,13.54,11,8,26.52,2.13,2.01,150.27,1.95,3793541,0,1.73,24.28,1.07
+412,M-957A,"9 Storied Residential Building at West Jafrabad, Dhaka",22.75,500,ASCE 7-16,Deep,No,0.2,8,5.5,1,58.56,21.95,15,9,28.96,1.52,2.01,336.68,1.85,5238192,0,2.52,26.49,1.17
