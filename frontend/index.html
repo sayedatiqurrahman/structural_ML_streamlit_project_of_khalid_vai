@@ -50,18 +50,17 @@
 <div class="flex items-center gap-4">
 <span class="text-xl font-black text-primary">StructuraML</span>
 <div class="hidden md:flex gap-6 ml-8">
-<a class="nav-link text-primary font-bold border-b-2 border-primary pb-1 cursor-pointer" data-page="parameters">Parameters</a>
-<a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" data-page="dashboard">Dashboard</a>
-<a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" data-page="about">About</a>
+
 </div>
 </div>
 <div class="flex items-center gap-3">
-<button class="p-2 hover:bg-surface-variant/50 transition-colors rounded-full cursor-pointer active:opacity-80">
-<span class="material-symbols-outlined text-primary">info</span>
+<button data-page="about" class="nav-link p-2 hover:bg-surface-variant/50 transition-colors rounded-full cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-primary" title="info" data-page="about">info</span>
 </button>
-<button class="p-2 hover:bg-surface-variant/50 transition-colors rounded-full cursor-pointer active:opacity-80">
-<span class="material-symbols-outlined text-primary">account_circle</span>
-</button>
+<!-- <button data-page="about" class="nav-link  p-2 hover:bg-surface-variant/50 transition-colors rounded-full cursor-pointer active:opacity-80">
+
+    <span class="material-symbols-outlined text-primary" title="about" >account_circle</span>
+</button> -->
 </div>
 </header>
 
@@ -69,8 +68,8 @@
 
 <aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 hidden lg:flex">
 <div class="px-6 mb-8">
-<h2 class="text-lg font-bold text-on-surface">StructuraML</h2>
-<p class="text-xs text-on-surface-variant">ML Structural Analysis</p>
+
+    <p class="text-xs text-on-surface-variant">ML Structural Analysis</p>
 </div>
 <nav id="sidebar-nav" class="flex flex-col gap-1"></nav>
 <div class="mt-auto px-6 py-4">
@@ -109,11 +108,11 @@
 <div class="grid grid-cols-2 gap-4">
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Concrete fc (MPa)</label>
-<input id="p_fc" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="24 MPa">
+<input title="Concrete fc (MPa)" id="p_fc" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="24">
 </div>
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Steel fy (MPa)</label>
-<input id="p_fy" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="413 MPa">
+<input title="Steel fy (MPa)" id="p_fy" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="413">
 </div>
 </div>
 </div>
@@ -127,19 +126,19 @@
 <div class="grid grid-cols-2 gap-x-4 gap-y-4">
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Seismic Zone (z)</label>
-<input id="p_z" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="0.15">
+<input title="Seismic Zone (z)" id="p_z" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="0.15">
 </div>
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Resp. Reduction (R)</label>
-<input id="p_R" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="8.0">
+<input title="Resp. Reduction (R)" id="p_R" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="8.0">
 </div>
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Wind Speed v (m/s)</label>
-<input id="p_v" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="58 m/s">
+<input title="Wind Speed v (m/s)"  id="p_v" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="58">
 </div>
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Live Load W (kN/m&sup2;)</label>
-<input id="p_W" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="2.0 kN/m\u00b2">
+<input title="Live Load W (kN/m&sup2;)"  id="p_W" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="2.0">
 </div>
 </div>
 </section>
@@ -152,27 +151,27 @@
 <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Long Axis La (m)</label>
-<input id="p_La" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="22.0">
+<input title="Long Axis La (m)"  id="p_La" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="22.0">
 </div>
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Short Axis Lb (m)</label>
-<input id="p_Lb" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="14.5">
+<input title="Short Axis Lb (m)" id="p_Lb" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="14.5">
 </div>
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">No. of Story (n)</label>
-<input id="p_n" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="7">
+<input title="No. of Story (n)" id="p_n" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="7">
 </div>
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Structure Height H (m)</label>
-<input id="p_H" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="26.0">
+<input title="Structure Height H (m)" id="p_H" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="26.0">
 </div>
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">GF Height Hgf (m)</label>
-<input id="p_Hgf" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="3.2">
+<input title="GF Height Hgf (m)" id="p_Hgf" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="3.2">
 </div>
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Floor Area A (m&sup2;)</label>
-<input id="p_A" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="220">
+<input title="Floor Area A (m&sup2;)" id="p_A" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="number" value="220">
 </div>
 </div>
 </section>
@@ -185,11 +184,11 @@
 <div class="grid grid-cols-2 gap-6">
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Rebar Ratio p (%)</label>
-<input id="p_p" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="0.8">
+<input title="Rebar Ratio p (%)" id="p_p" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="0.8">
 </div>
 <div>
 <label class="text-[11px] font-bold uppercase text-slate-400 block mb-1">Gross Area Ag (sqmm)</label>
-<input id="p_Ag" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="4000000 sqmm">
+<input title="Gross Area Ag (sqmm)" id="p_Ag" class="w-full bg-slate-100 border-none rounded-lg text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary" type="text" value="4000000">
 </div>
 </div>
 </section>
@@ -300,7 +299,7 @@
 </div>
 
 <div class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none opacity-[0.03]">
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4fm2PJsJQ1N5E3jc9CYDvJ6bkPsAsYeMHZru5U6XpbrY1sGIbFPlsAXnIWJDQhOVtQVXBxlU5-Chl4vkgMJe7ZE-xcPTRGjsAHHJ0lb60OOOltr_Qq99FaiF3W1bTD9mX3w8aInjqewIGiNyN-kUKByV9nN3RAOjHRYhK5ZD1-edTV0JADFoiEVoAvZ5FNSCQuqWb2fsq71pkzWGmhILZIpu4gZJtzNVP5K2tooCPdNCjrr8_S2PkJps_KBsWBjFuEl8pGsMP51Qq">
+<img title="Structural Image" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4fm2PJsJQ1N5E3jc9CYDvJ6bkPsAsYeMHZru5U6XpbrY1sGIbFPlsAXnIWJDQhOVtQVXBxlU5-Chl4vkgMJe7ZE-xcPTRGjsAHHJ0lb60OOOltr_Qq99FaiF3W1bTD9mX3w8aInjqewIGiNyN-kUKByV9nN3RAOjHRYhK5ZD1-edTV0JADFoiEVoAvZ5FNSCQuqWb2fsq71pkzWGmhILZIpu4gZJtzNVP5K2tooCPdNCjrr8_S2PkJps_KBsWBjFuEl8pGsMP51Qq">
 </div>
 <script>/*__JS__*/</script>
 </body></html>
