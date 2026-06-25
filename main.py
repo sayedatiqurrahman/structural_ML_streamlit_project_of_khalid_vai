@@ -1,10 +1,14 @@
 import os
 import json
+import logging
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-from utils import predict, compute_limits, DEFAULT_PARAMS
+from utils import predict, compute_limits, DEFAULT_PARAMS, PARAM_LABELS
+
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+logger = logging.getLogger("structuraml")
 
 app = FastAPI(title="StructuralML")
 
@@ -17,6 +21,7 @@ app.add_middleware(
 )
 
 FRONTEND_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "frontend")
+EXPECTED_KEYS = ["fc", "fy", "z", "R", "v", "W", "La", "Lb", "n", "H", "Hgf", "A", "p", "Ag"]
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -46,12 +51,32 @@ async def root():
 @app.post("/api/predict")
 async def api_predict(data: dict):
     try:
+        logger.info("=== /api/predict called ===")
+        logger.info("Raw request data: %s", json.dumps(data, default=str) if data else "EMPTY")
+
+        missing = [k for k in EXPECTED_KEYS if k not in data]
+        if missing:
+            logger.warning("Missing keys: %s — using defaults for those", missing)
+        unknown = [k for k in data if k not in EXPECTED_KEYS]
+        if unknown:
+            logger.warning("Unknown keys received: %s", unknown)
+
         params = {}
-        for k in ["fc", "fy", "z", "R", "v", "W", "La", "Lb", "n", "H", "Hgf", "A", "p", "Ag"]:
-            params[k] = float(data.get(k, DEFAULT_PARAMS[k]))
+        for k in EXPECTED_KEYS:
+            raw = data.get(k, DEFAULT_PARAMS[k])
+            try:
+                params[k] = float(raw)
+            except (TypeError, ValueError):
+                logger.warning("Cannot convert %s=%r to float, using default %s", k, raw, DEFAULT_PARAMS[k])
+                params[k] = float(DEFAULT_PARAMS[k])
+
+        logger.info("Parsed params: %s", json.dumps(params, default=str))
+
         results = predict(params)
+        logger.info("Prediction results: %s", json.dumps(results, default=str))
         return {"status": "ok", "params": params, "results": results}
     except Exception as e:
+        logger.error("Prediction error: %s", str(e), exc_info=True)
         return JSONResponse(status_code=500, content={"status": "error", "message": str(e)})
 
 

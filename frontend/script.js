@@ -23,17 +23,18 @@ var state_limits = null;
 var state_page = "parameters";
 
 function parseNumber(s) {
-    var m = String(s).match(/[-+]?\d*\.?\d+/);
+    s = String(s).replace(/,/g, '');
+    var m = s.match(/[-+]?\d*\.?\d+/);
     return m ? parseFloat(m[0]) : 0;
 }
 
 function fmtParam(key, val) {
-    var m = {"fc":val.toFixed(0)+" MPa","fy":val.toFixed(0)+" MPa","z":val.toFixed(2),
-             "R":val.toFixed(1),"v":val.toFixed(0)+" m/s","W":val.toFixed(1)+" kN/m\u00b2",
-             "La":val.toFixed(1),"Lb":val.toFixed(1),"n":val.toFixed(0),
-             "H":val.toFixed(1),"Hgf":val.toFixed(1),"A":val.toFixed(0),
-             "p":val.toFixed(1),"Ag":Number(val).toLocaleString()+" sqmm"};
-    return m[key] || String(val);
+    var raw = {"fc":val.toFixed(0),"fy":val.toFixed(0),"z":val.toFixed(2),
+               "R":val.toFixed(1),"v":val.toFixed(0),"W":val.toFixed(1),
+               "La":val.toFixed(1),"Lb":val.toFixed(1),"n":val.toFixed(0),
+               "H":val.toFixed(1),"Hgf":val.toFixed(1),"A":val.toFixed(0),
+               "p":val.toFixed(1),"Ag":String(val)};
+    return raw[key] || String(val);
 }
 
 function renderSidebar(currentPage) {
@@ -287,17 +288,30 @@ function predictAction() {
     })
     .then(function(r) { return r.json(); })
     .then(function(d) {
-        if (d.status === 'ok') {
-            state_params = d.params;
-            state_results = d.results;
-            updateInputs(state_params);
-            updateResults(state_results);
-            updateLimits(state_limits, state_results);
-            var risks = state_limits ? state_limits.risks : null;
-            updateCharts(risks);
-        } else {
+        if (d.status !== 'ok') {
             alert('Prediction error: ' + (d.message || 'unknown'));
+            return;
         }
+        state_params = d.params;
+        state_results = d.results;
+        updateInputs(state_params);
+        updateResults(state_results);
+        return fetch('/api/calculate', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({params: state_params, results: state_results})
+        });
+    })
+    .then(function(r) { return r ? r.json() : null; })
+    .then(function(d) {
+        if (!d) return;
+        if (d.status === 'ok') {
+            state_limits = d.limits;
+        }
+        updateLimits(state_limits, state_results);
+        var risks = state_limits ? state_limits.risks : null;
+        updateCharts(risks);
+        updateAction(state_limits);
     })
     .catch(function(e) { alert('Network error: ' + e.message); });
 }

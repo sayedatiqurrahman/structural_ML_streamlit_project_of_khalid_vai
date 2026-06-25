@@ -1,9 +1,11 @@
 import os
 import warnings
+import logging
 import numpy as np
 import joblib
 
 warnings.filterwarnings("ignore")
+logger = logging.getLogger("structuraml")
 
 MODELS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "models")
 
@@ -14,11 +16,22 @@ def load_models():
     global _models
     if _models is not None:
         return _models
+    sway_path = os.path.join(MODELS_DIR, "story_sway_gpr_model.joblib")
+    drift_path = os.path.join(MODELS_DIR, "story_drift_gpr_model.joblib")
+    column_path = os.path.join(MODELS_DIR, "column_overstress_gpr_model.pkl")
+    logger.info("Loading models from %s", MODELS_DIR)
+    logger.info("  sway: %s (exists=%s)", sway_path, os.path.exists(sway_path))
+    logger.info("  drift: %s (exists=%s)", drift_path, os.path.exists(drift_path))
+    logger.info("  column: %s (exists=%s)", column_path, os.path.exists(column_path))
     _models = {
-        "sway": joblib.load(os.path.join(MODELS_DIR, "story_sway_gpr_model.joblib")),
-        "drift": joblib.load(os.path.join(MODELS_DIR, "story_drift_gpr_model.joblib")),
-        "column": joblib.load(os.path.join(MODELS_DIR, "column_overstress_gpr_model.pkl")),
+        "sway": joblib.load(sway_path),
+        "drift": joblib.load(drift_path),
+        "column": joblib.load(column_path),
     }
+    for name, m in _models.items():
+        logger.info("  %s model type: %s", name, type(m).__name__)
+        if hasattr(m, "steps"):
+            logger.info("    Pipeline steps: %s", [s[0] for s in m.steps])
     return _models
 
 
@@ -30,13 +43,25 @@ def predict(params: dict) -> dict:
     n = params["n"]; H = params["H"]; Hgf = params["Hgf"]; A = params["A"]
     p = params["p"]; Ag = params["Ag"]
 
-    sway_input = np.array([[n, H, Hgf, Lb, v, A, W, p, Ag]])
-    drift_input = np.array([[fc, La, Lb, n, H, R, Hgf, z, Ag]])
-    column_input = np.array([[fc, Lb, A, W, R, H, Hgf, Ag, p]])
+    sway_input = np.array([[n, H, Hgf, Lb, v, A, W, p, Ag]], dtype=float)
+    drift_input = np.array([[fc, La, Lb, n, H, R, Hgf, z, Ag]], dtype=float)
+    column_input = np.array([[fc, Lb, A, W, R, H, Hgf, Ag, p]], dtype=float)
+
+    logger.info("--- Model input arrays ---")
+    logger.info("  Sway  input: n=%s H=%s Hgf=%s Lb=%s v=%s A=%s W=%s p=%s Ag=%s",
+                n, H, Hgf, Lb, v, A, W, p, Ag)
+    logger.info("  Drift input: fc=%s La=%s Lb=%s n=%s H=%s R=%s Hgf=%s z=%s Ag=%s",
+                fc, La, Lb, n, H, R, Hgf, z, Ag)
+    logger.info("  Col   input: fc=%s Lb=%s A=%s W=%s R=%s H=%s Hgf=%s Ag=%s p=%s",
+                fc, Lb, A, W, R, H, Hgf, Ag, p)
 
     max_story_sway = max(0.0, float(models["sway"].predict(sway_input)[0]))
     max_story_drift = max(0.0, float(models["drift"].predict(drift_input)[0]))
     column_fail_pct = max(0.0, min(100.0, float(models["column"].predict(column_input)[0])))
+
+    logger.info("--- Raw predictions ---")
+    logger.info("  max_story_sway=%.4f  max_story_drift=%.4f  column_fail_pct=%.4f",
+                max_story_sway, max_story_drift, column_fail_pct)
 
     torsion = round(1 + abs(La - Lb) / (La + Lb) * 0.3, 4)
 
@@ -72,6 +97,12 @@ def _classify_ratio(ratio):
 def compute_limits(params: dict, results: dict) -> dict:
     Hgf = params["Hgf"]
     H = params["H"]
+    logger.info("--- compute_limits ---")
+    logger.info("  Hgf=%s H=%s", Hgf, H)
+    if results:
+        logger.info("  results: col_fail=%s drift=%s sway=%s torsion=%s",
+                    results.get("column_fail_pct"), results.get("max_story_drift"),
+                    results.get("max_story_sway"), results.get("torsion"))
 
     allowable_drift_mm = (0.002 * Hgf) * 1000
     allowable_sway_mm = (H * 1000) / 500

@@ -22,7 +22,7 @@ PARAM_META = {
     "Hgf": {"min": 2.0, "max": 6.6, "step": 0.1},
     "A": {"min": 15.0, "max": 8000.0, "step": 1.0},
     "p": {"min": 0.05, "max": 5.0, "step": 0.1},
-    "Ag": {"min": 50000, "max": 60000000, "step": 10000.0},
+    "Ag": {"min": 100000, "max": 60000000, "step": 10000.0},
 }
 
 DEFAULT_PARAMS = {
