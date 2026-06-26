@@ -24,6 +24,11 @@ FRONTEND_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fronten
 EXPECTED_KEYS = ["fc", "fy", "z", "R", "v", "W", "La", "Lb", "n", "H", "Hgf", "A", "p", "Ag"]
 
 
+@app.get("/healthz")
+async def healthz():
+    return {"status": "ok"}
+
+
 @app.get("/", response_class=HTMLResponse)
 async def root():
     with open(os.path.join(FRONTEND_DIR, "index.html"), encoding="utf-8") as f:
