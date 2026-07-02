@@ -10,36 +10,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           lfs: true
 
-      - name: Set up Git
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: Push code only to Hugging Face Spaces (models stay on GitHub)
+      - name: Push to Hugging Face Spaces
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_SPACE: dev-atiqur-rahman/structural-ml
         run: |
-          # Create a temporary branch excluding model files
-          git checkout -b hf-sync
+          # Convert LFS objects back to regular files so HF accepts them
+          git lfs migrate export --include="*.pkl,*.joblib" --everything
 
-          # Remove models from the branch so they're not pushed to HF
-          git rm -r --cached models/ 2>/dev/null || true
-          git rm --cached -r models/ 2>/dev/null || true
+          # Remove LFS tracking
+          git lfs untrack "*.pkl" 2>/dev/null || true
+          git lfs untrack "*.joblib" 2>/dev/null || true
+          sed -i '/\*\.pkl filter=lfs/d' .gitattributes
+          sed -i '/\*\.joblib filter=lfs/d' .gitattributes
+          sed -i '/\*\.pickle filter=lfs/d' .gitattributes
 
-          # Also remove LFS tracking from .gitattributes
-          sed -i '/\*\.pkl filter=lfs/d' .gitattributes 2>/dev/null || true
-          sed -i '/\*\.joblib filter=lfs/d' .gitattributes 2>/dev/null || true
+          git add .gitattributes
+          git diff --cached --quiet || git commit -m "convert lfs to regular files"
 
-          git add -A
-          git diff --cached --quiet || git commit -m "sync code to HF"
-
-          # Push to HF (models already exist on HF and won't be touched)
+          # Push everything to HF
           git remote add hf https://user:$HF_TOKEN@huggingface.co/spaces/$HF_SPACE
-          git push hf hf-sync:main --force
-
-          # Clean up
-          git checkout main
+          git push hf main --force
