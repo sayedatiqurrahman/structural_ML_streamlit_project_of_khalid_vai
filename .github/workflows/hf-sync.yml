@@ -1,4 +1,4 @@
-name: Sync to Hugging Face Spaces
+name: Sync to Hugging Face Hub
 
 on:
   push:
@@ -8,28 +8,9 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: huggingface/hub-sync@v0.1.0
         with:
-          lfs: true
-
-      - name: Push to Hugging Face Spaces
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          HF_SPACE: dev-atiqur-rahman/structural-ml
-        run: |
-          # Convert LFS objects back to regular files so HF accepts them
-          git lfs migrate export --include="*.pkl,*.joblib" --everything
-
-          # Remove LFS tracking
-          git lfs untrack "*.pkl" 2>/dev/null || true
-          git lfs untrack "*.joblib" 2>/dev/null || true
-          sed -i '/\*\.pkl filter=lfs/d' .gitattributes
-          sed -i '/\*\.joblib filter=lfs/d' .gitattributes
-          sed -i '/\*\.pickle filter=lfs/d' .gitattributes
-
-          git add .gitattributes
-          git diff --cached --quiet || git commit -m "convert lfs to regular files"
-
-          # Push everything to HF
-          git remote add hf https://user:$HF_TOKEN@huggingface.co/spaces/$HF_SPACE
-          git push hf main --force
+          github_repo_id: ${{ github.repository }}
+          huggingface_repo_id: dev-atiqur-rahman/structural-ml
+          hf_token: ${{ secrets.HF_TOKEN }}
