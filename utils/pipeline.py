@@ -85,7 +85,7 @@ def predict(params: dict) -> dict:
 
 
 def _classify_ratio(ratio):
-    if ratio >= 1.0:
+    if ratio > 1.0:
         return "Very High"
     elif ratio >= 0.80:
         return "Moderate"
@@ -130,11 +130,6 @@ def compute_limits(params: dict, results: dict) -> dict:
         sway_label = _classify_ratio(sway_ratio)
         risks["sway"] = {"label": sway_label, "pct": round(min(100, sway_ratio * 100), 1)}
 
-        tor = results.get("torsion", 1.0)
-        tor_ratio = (tor - 1) / 0.5
-        tor_label = _classify_ratio(tor_ratio)
-        risks["torsion"] = {"label": tor_label, "pct": round(min(100, tor_ratio * 100), 1)}
-
     safety = {}
     if results:
         safety["drift_pass"] = (results["max_story_drift"] / allowable_drift_mm) <= 1 if allowable_drift_mm > 0 else False
@@ -143,13 +138,9 @@ def compute_limits(params: dict, results: dict) -> dict:
 
     labels = [r["label"] for r in risks.values()]
     if "Very High" in labels:
-        action = ["Action Required", "Detailed structural investigation is recommended immediately.", "error"]
-    elif labels.count("Moderate") >= 2:
-        action = ["Review Suggested", "Consider detailed analysis for moderate-risk categories.", "warning"]
-    elif labels.count("Low") >= 2:
-        action = ["Monitor", "Structure appears adequate — routine monitoring is sufficient.", "info"]
+        action = ["Structure Appears Risky", "Structural Assessment Required.", "error"]
     else:
-        action = ["All Clear", "All structural performance criteria are met.", "success"]
+        action = ["Structure Appears Adequate", "Routine Monitoring is Sufficient.", "success"]
 
     return {
         "limits": limits,

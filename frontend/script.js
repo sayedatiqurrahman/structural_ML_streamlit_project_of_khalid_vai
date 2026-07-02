@@ -1,7 +1,7 @@
 var NAV_ITEMS = [
     {key:"parameters", icon:"tune", label:"Parameters"},
     {key:"dashboard", icon:"dashboard", label:"Dashboard"},
-    {key:"history", icon:"history", label:"Benchmarks"},
+    {key:"history", icon:"history", label:"History"},
     {key:"about", icon:"info", label:"About"},
 ];
 
@@ -93,24 +93,30 @@ function updateInputs(params) {
     });
 }
 
+var R2_VALUES = {
+    column: '0.930',
+    drift: '0.926',
+    sway: '0.958'
+};
+
 function updateResults(results) {
     if (!results) {
-        document.getElementById('res-column-fail').textContent = '--';
-        document.getElementById('res-drift').textContent = '--';
-        document.getElementById('res-sway').textContent = '--';
-        document.getElementById('res-torsion').textContent = '--';
+        document.getElementById('res-column-fail').innerHTML = '--';
+        document.getElementById('res-drift').innerHTML = '--';
+        document.getElementById('res-sway').innerHTML = '--';
         document.getElementById('status-badge').textContent = 'READY';
         document.getElementById('status-badge').className = 'px-2 py-1 bg-slate-100 text-slate-500 text-[10px] font-bold rounded';
         document.getElementById('limits-rows').innerHTML = '';
         return;
     }
-    document.getElementById('res-column-fail').textContent = Number(results.column_fail_pct).toFixed(2) + '%';
-    document.getElementById('res-drift').textContent = Number(results.max_story_drift).toFixed(4);
-    document.getElementById('res-sway').textContent = Number(results.max_story_sway).toFixed(2) + ' mm';
-    document.getElementById('res-torsion').textContent = Number(results.torsion).toFixed(4);
+    document.getElementById('res-column-fail').innerHTML = Number(results.column_fail_pct).toFixed(2) + '% <span class="text-[10px] text-slate-400 font-normal">(R&sup2; = ' + R2_VALUES.column + ')</span>';
+    document.getElementById('res-drift').innerHTML = Number(results.max_story_drift).toFixed(4) + ' <span class="text-[10px] text-slate-400 font-normal">(R&sup2; = ' + R2_VALUES.drift + ')</span>';
+    document.getElementById('res-sway').innerHTML = Number(results.max_story_sway).toFixed(2) + ' mm <span class="text-[10px] text-slate-400 font-normal">(R&sup2; = ' + R2_VALUES.sway + ')</span>';
     document.getElementById('status-badge').textContent = 'PREDICTED';
     document.getElementById('status-badge').className = 'px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded';
 }
+
+var actualAllowable = {};
 
 function updateLimits(limits, results) {
     var container = document.getElementById('limits-rows');
@@ -125,6 +131,10 @@ function updateLimits(limits, results) {
     var drift_ratio = (dr / ls.drift_mm * 100).toFixed(1);
     var sway_ratio = (sw / ls.sway_mm * 100).toFixed(1);
     var s = limits.safety || {};
+
+    actualAllowable.drift = {av: dr.toFixed(2), lv: ls.drift_mm + ' mm'};
+    actualAllowable.sway = {av: sw.toFixed(2), lv: ls.sway_mm + ' mm'};
+
     var items = [
         {nm:"Drift (actual/allowable)", k:"drift", uv:"mm", av:dr, lv:ls.drift_mm, ratio:drift_ratio, pass:s.drift_pass},
         {nm:"Sway (actual/allowable)", k:"sway", uv:"mm", av:sw, lv:ls.sway_mm, ratio:sway_ratio, pass:s.sway_pass},
@@ -140,7 +150,29 @@ function updateLimits(limits, results) {
           '</div>';
     });
     container.innerHTML = html;
+
+    document.getElementById('av-drift').textContent = actualAllowable.drift.av + ' / ' + actualAllowable.drift.lv;
+    document.getElementById('av-sway').textContent = actualAllowable.sway.av + ' / ' + actualAllowable.sway.lv;
 }
+
+var centerTextPlugin = {
+    id: 'centerText',
+    beforeDraw: function(chart) {
+        var width = chart.width, height = chart.height, ctx = chart.ctx;
+        ctx.save();
+        var centerX = width / 2;
+        var centerY = height / 2;
+        var pct = chart.data.datasets[0].data[0];
+        if (pct === 0) { ctx.restore(); return; }
+        var displayText = pct.toFixed(1) + '%';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.font = 'bold ' + Math.round(Math.min(width, height) * 0.13) + 'px Inter, sans-serif';
+        ctx.fillStyle = chart.data.datasets[0].backgroundColor[0];
+        ctx.fillText(displayText, centerX, centerY);
+        ctx.restore();
+    }
+};
 
 function createChart(canvasId, pct, color) {
     var existing = chartInstances[canvasId];
@@ -168,26 +200,27 @@ function createChart(canvasId, pct, color) {
                 animateRotate: true,
                 duration: 600
             }
-        }
+        },
+        plugins: [centerTextPlugin]
     });
 }
 
 function updateCharts(risks) {
     if (!risks) {
-        ['column','drift','sway','torsion'].forEach(function(id) {
+        ['column','drift','sway'].forEach(function(id) {
             var rl = document.getElementById('rl-' + id);
             if (rl) { rl.textContent = 'Pending'; rl.className = 'text-[10px] font-bold text-slate-400'; }
             createChart('cht-' + id, 0, '#e2e8f0');
         });
         return;
     }
-    ['column','drift','sway','torsion'].forEach(function(id) {
+    ['column','drift','sway'].forEach(function(id) {
         var ri = risks[id];
         if (!ri) return;
         var color = RC[ri.label] || '#94A3B8';
         var tc = RC_TAILWIND[ri.label] || 'text-slate-400';
         var rl = document.getElementById('rl-' + id);
-        if (rl) { rl.textContent = ri.label; rl.className = 'text-[10px] font-bold ' + tc; }
+        if (rl) { rl.innerHTML = ri.label + ' <span class="font-normal">' + ri.pct.toFixed(1) + '%</span>'; rl.className = 'text-[10px] font-bold ' + tc; }
         createChart('cht-' + id, ri.pct, color);
     });
 }
@@ -201,10 +234,8 @@ function updateAction(limits) {
     }
     var at = limits.action[0], a2 = limits.action[1], aty = limits.action[2] || 'info';
     var styles = {
-        error: {bg:"bg-red-50", bd:"border-red-100", ic:"text-red-600", tt:"text-red-900", icon:"error"},
-        warning: {bg:"bg-orange-50", bd:"border-orange-100", ic:"text-orange-600", tt:"text-orange-900", icon:"warning"},
-        info: {bg:"bg-green-50", bd:"border-green-100", ic:"text-green-600", tt:"text-green-900", icon:"check_circle"},
-        success: {bg:"bg-blue-50", bd:"border-blue-100", ic:"text-blue-600", tt:"text-blue-900", icon:"check_circle"},
+        error: {bg:"bg-red-50", bd:"border-red-100", ic:"text-red-600", tt:"text-red-900", icon:"warning"},
+        success: {bg:"bg-green-50", bd:"border-green-100", ic:"text-green-600", tt:"text-green-900", icon:"check_circle"},
     };
     var s = styles[aty] || styles.info;
     box.innerHTML =
@@ -230,7 +261,7 @@ function renderDashboard() {
     }
     var riskRows = '';
     var risks = (limits && limits.risks) ? limits.risks : {};
-    [["column","Column Overstress"],["drift","Story Drift"],["sway","Story Sway"],["torsion","Torsion"]].forEach(function(it) {
+    [["column","Column Overstress"],["drift","Story Drift"],["sway","Story Sway"]].forEach(function(it) {
         var ri = risks[it[0]];
         var label = ri ? ri.label : '--';
         var cls = RC_BG[label] || "bg-slate-100 text-slate-600";
@@ -247,11 +278,10 @@ function renderDashboard() {
     });
     content.innerHTML =
       '<h1 class="text-3xl font-black text-slate-900 tracking-tight">Dashboard</h1>' +
-      '<div class="grid grid-cols-2 md:grid-cols-4 gap-4">' +
+      '<div class="grid grid-cols-3 gap-4">' +
         '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><span class="text-xs font-semibold text-slate-500">Column Fail</span><span class="text-2xl font-black text-slate-900 block mt-1">' + results.column_fail_pct.toFixed(2) + '%</span></div>' +
         '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><span class="text-xs font-semibold text-slate-500">Max Drift</span><span class="text-2xl font-black text-slate-900 block mt-1">' + results.max_story_drift.toFixed(4) + '</span></div>' +
         '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><span class="text-xs font-semibold text-slate-500">Max Sway</span><span class="text-2xl font-black text-slate-900 block mt-1">' + results.max_story_sway.toFixed(2) + ' mm</span></div>' +
-        '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><span class="text-xs font-semibold text-slate-500">Torsion</span><span class="text-2xl font-black text-slate-900 block mt-1">' + results.torsion.toFixed(4) + '</span></div>' +
       '</div>' +
       '<div class="grid grid-cols-1 md:grid-cols-2 gap-6">' +
         '<div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm"><h4 class="text-xs font-bold text-slate-400 uppercase mb-4">Risk Overview</h4>' + riskRows + '</div>' +
@@ -329,7 +359,7 @@ function renderHistory() {
         var statusColor = allPass ? 'text-green-600' : 'text-orange-500';
 
         var riskLabels = '';
-        ['column','drift','sway','torsion'].forEach(function(k) {
+        ['column','drift','sway'].forEach(function(k) {
             var label = risks[k] ? risks[k].label : '--';
             var cls = RC_BG[label] || "bg-slate-100 text-slate-600";
             riskLabels += '<span class="text-[10px] font-bold px-1.5 py-0.5 rounded-full ' + cls + '">' + label + '</span> ';
@@ -357,11 +387,10 @@ function renderHistory() {
                 '<span class="text-slate-400">Gross Area:</span><span class="font-semibold text-slate-800 -ml-3">' + Number(p.Ag).toLocaleString() + ' mm&sup2;</span>' +
               '</div>' +
               '<div class="h-px bg-slate-100 my-2.5"></div>' +
-              '<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">' +
+              '<div class="grid grid-cols-3 gap-3">' +
                 '<div class="bg-slate-50 rounded-lg px-3 py-2"><span class="text-[10px] font-semibold text-slate-400 uppercase block">Drift</span><span class="text-sm font-bold text-slate-900">' + Number(r.max_story_drift).toFixed(4) + '</span></div>' +
                 '<div class="bg-slate-50 rounded-lg px-3 py-2"><span class="text-[10px] font-semibold text-slate-400 uppercase block">Sway</span><span class="text-sm font-bold text-slate-900">' + Number(r.max_story_sway).toFixed(2) + ' mm</span></div>' +
                 '<div class="bg-slate-50 rounded-lg px-3 py-2"><span class="text-[10px] font-semibold text-slate-400 uppercase block">Column Fail</span><span class="text-sm font-bold text-slate-900">' + Number(r.column_fail_pct).toFixed(2) + '%</span></div>' +
-                '<div class="bg-slate-50 rounded-lg px-3 py-2"><span class="text-[10px] font-semibold text-slate-400 uppercase block">Torsion</span><span class="text-sm font-bold text-slate-900">' + Number(r.torsion).toFixed(4) + '</span></div>' +
               '</div>' +
             '</div>' +
           '</div>';
